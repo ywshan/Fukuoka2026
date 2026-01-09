@@ -7,9 +7,7 @@
     
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="福岡之旅">
     <meta name="theme-color" content="#1e3c72">
-    
     <link rel="apple-touch-icon" href="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/512/external-torii-gate-japan-flaticons-lineal-color-flat-icons-2.png">
     <link rel="icon" type="image/png" href="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/512/external-torii-gate-japan-flaticons-lineal-color-flat-icons-2.png">
 
@@ -38,7 +36,7 @@
         .header-icon { font-size: 2rem; margin-bottom: 5px; opacity: 0.8; }
         .fa-spin-slow { animation: fa-spin 5s infinite linear; }
 
-        /* === Snow Effect (飄雪效果) === */
+        /* === Snow Effect === */
         .snowflake {
             position: fixed; top: -20px; z-index: 9999;
             color: #fff; font-size: 1em; user-select: none; pointer-events: none;
@@ -85,7 +83,7 @@
         .member-list { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
         .member-item { background: #f1f3f5; padding: 8px 14px; border-radius: 25px; font-size: 0.9rem; color: #555; display: flex; align-items: center; }
         .member-item i { margin-right: 6px; }
-        .break { flex-basis: 100%; height: 0; } /* 強制換行 */
+        .break { flex-basis: 100%; height: 0; }
 
         .summary-list { list-style: none; padding: 0; }
         .summary-list li { display: flex; align-items: start; margin-bottom: 12px; font-size: 0.95rem; line-height: 1.5; }
@@ -105,7 +103,7 @@
         .divider { height: 1px; background: #eee; margin: 12px 0; }
         small { color: #888; font-size: 0.85rem; display: block; margin-top: 4px; }
 
-        /* === Itinerary Timeline === */
+        /* === Itinerary & Food Cards === */
         .day-block { margin-bottom: 30px; }
         .day-header { background: #1e3c72; color: white; padding: 10px 15px; border-radius: 10px; font-weight: bold; margin-bottom: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         .timeline { border-left: 3px solid #e0e0e0; margin-left: 10px; padding-left: 25px; }
@@ -119,12 +117,21 @@
         .event .desc { background: white; padding: 12px 15px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 1px solid #eee; }
         .note { font-size: 0.85rem; color: #666; display: block; margin-top: 4px; }
         .highlight-box .desc { border-left: 4px solid #e91e63; background: #fff0f5; }
+        
+        /* 餐廳專用 */
+        .food-card { border-left: 5px solid #ff9800; }
+        .food-header { display: flex; justify-content: space-between; align-items: start; margin-bottom: 10px; }
+        .food-title { font-weight: bold; font-size: 1.1rem; color: #333; }
+        .res-badge { padding: 3px 8px; border-radius: 4px; color: white; font-size: 0.75rem; font-weight: bold; white-space: nowrap; margin-left: 10px; }
+        .res-ok { background: #4caf50; } /* 綠色: 可預約 */
+        .res-no { background: #f44336; } /* 紅色: 不可/排隊 */
+        .food-info { font-size: 0.9rem; color: #555; line-height: 1.6; }
+        .food-info i { width: 20px; color: #ff9800; text-align: center; margin-right: 5px; }
 
-        /* === Ski & Packing & Weather === */
+        /* === Ski & Packing === */
         .warning-card { background: #fff5f5; border-left: 5px solid #c62828; }
         .warning-card h3 { color: #c62828; border-color: #ffcdd2; }
         
-        /* 攻略顏色分流 */
         .outfit-card { border-left: 5px solid #9c27b0; background: #f3e5f5; }
         .outfit-card h3 { color: #7b1fa2; border-bottom: 2px solid #e1bee7; }
         .tips-card-a { background: #e8f5e9; border-left: 5px solid #2e7d32; }
@@ -144,17 +151,7 @@
         .weather-box .temp { font-size: 1.2rem; font-weight: bold; }
         .weather-box small { font-size: 0.75rem; opacity: 0.9; }
 
-        /* JMA 按鈕樣式 */
-        .btn-jma {
-            display: block; width: 100%;
-            background: white; border: none;
-            color: #1e3c72; text-align: center; 
-            padding: 12px; border-radius: 8px; 
-            text-decoration: none; font-weight: 800; font-size: 1rem;
-            margin-top: 15px; 
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15); 
-            transition: transform 0.1s;
-        }
+        .btn-jma { display: block; width: 100%; background: white; border: none; color: #1e3c72; text-align: center; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 800; font-size: 1rem; margin-top: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15); transition: transform 0.1s; }
         .btn-jma:active { transform: scale(0.98); }
 
         .outfit-list { padding-left: 5px; list-style: none; }
@@ -174,26 +171,9 @@
         .check-card[style*="fbc02d"] { border-left: 5px solid #fbc02d; background: #fff9c4; }
         .check-card[style*="ff4081"] { border-left: 5px solid #ff4081; background: #fff0f6; }
 
-        /* === Accounts / Form (Mini Ver.) === */
-        .form-container { 
-            position: relative; 
-            width: 100%;
-            height: 420px; /* 固定高度，唔會太長 */
-            overflow-y: scroll; /* 容許內部捲動 */
-            overflow-x: hidden;
-            border-radius: 12px;
-            border: 1px solid #ddd;
-            background: #fff;
-        }
-        .form-container iframe { 
-            position: absolute; 
-            top: 0; left: 0; 
-            width: 118%; /* 100 / 0.85 補償 */
-            height: 150%; /* 預留多啲位俾佢縮放 */
-            border: 0; 
-            transform: scale(0.85); /* 縮細 85% */
-            transform-origin: top left;
-        }
+        /* === Accounts / Form === */
+        .form-container { position: relative; width: 100%; height: 420px; overflow-y: scroll; overflow-x: hidden; border-radius: 12px; border: 1px solid #ddd; background: #fff; }
+        .form-container iframe { position: absolute; top: 0; left: 0; width: 118%; height: 150%; border: 0; transform: scale(0.85); transform-origin: top left; }
         
         .accounts-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
         .accounts-table th { text-align: left; padding: 8px; border-bottom: 2px solid #eee; color: #888; font-size: 0.8rem; }
@@ -201,15 +181,7 @@
         .price-tag { font-weight: bold; color: #1e3c72; }
         .payer-badge { background: #e0f2f1; color: #00695c; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; }
         
-        .btn-google-sheet { 
-            display: block; width: 100%; 
-            background: #1565c0; color: white; 
-            text-align: center; padding: 15px; 
-            border-radius: 12px; text-decoration: none; 
-            font-weight: bold; font-size: 1.1rem; 
-            margin-top: 10px; 
-            box-shadow: 0 4px 10px rgba(21, 101, 192, 0.3); 
-        }
+        .btn-google-sheet { display: block; width: 100%; background: #1565c0; color: white; text-align: center; padding: 15px; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 1.1rem; margin-top: 10px; box-shadow: 0 4px 10px rgba(21, 101, 192, 0.3); }
         .btn-google-sheet:active { transform: scale(0.98); }
 
         /* === Bookings === */
@@ -221,19 +193,10 @@
         .booking-item .code { font-family: 'Courier New', monospace; font-weight: bold; background: #f1f3f5; padding: 6px 10px; border-radius: 6px; color: #1e3c72; letter-spacing: 0.5px; border: 1px solid #e9ecef; }
         .booking-item small { width: 100%; display: block; margin-top: 6px; color: #888; font-size: 0.8rem; }
 
-        /* === Bottom Nav === */
-        .bottom-nav {
-            position: fixed; bottom: 0; left: 0; width: 100%;
-            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
-            display: flex; justify-content: space-around;
-            padding: 10px 0 15px; box-shadow: 0 -5px 20px rgba(0,0,0,0.05); z-index: 999;
-            border-top: 1px solid rgba(0,0,0,0.05);
-        }
-        .nav-btn {
-            background: none; border: none; width: 14%; /* 7個掣 */
-            font-size: 0.6rem; color: #999; cursor: pointer; transition: all 0.2s;
-        }
-        .nav-btn i { font-size: 1.2rem; margin-bottom: 4px; display: block; transition: transform 0.2s; }
+        /* === Bottom Nav (8 Buttons) === */
+        .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); display: flex; justify-content: space-around; padding: 10px 0 15px; box-shadow: 0 -5px 20px rgba(0,0,0,0.05); z-index: 999; border-top: 1px solid rgba(0,0,0,0.05); }
+        .nav-btn { background: none; border: none; width: 12.5%; /* 8個掣 */ font-size: 0.6rem; color: #999; cursor: pointer; transition: all 0.2s; padding: 0; }
+        .nav-btn i { font-size: 1.1rem; margin-bottom: 4px; display: block; transition: transform 0.2s; }
         .nav-btn.active { color: #1e3c72; font-weight: bold; }
         .nav-btn.active i { transform: translateY(-3px); color: #1e3c72; }
     </style>
@@ -255,7 +218,6 @@
                 
                 <div class="vibes-box">
                     <i class="fas fa-bullhorn"></i> 旅程規則：<br>
-                    只可以講：<br>
                     <span class="quote">「好玩！」😆</span>
                     <span class="quote">「好食！」😋</span>
                     <span class="quote">「好開心呀！」🥳</span>
@@ -285,8 +247,8 @@
                     <div class="member-item" style="background:#fce4ec; color:#c2185b; border: 1px solid #f48fb1;">
                         <i class="fas fa-heart"></i> Carol
                     </div>
-                    <div class="member-item" style="background:#e0f2f1; color:#00695c; border: 1px solid #80cbc4;">
-                        <i class="fas fa-user-secret"></i> I人
+                    <div class="member-item" style="background:#fce4ec; color:#c2185b; border: 1px solid #f48fb1;">
+                        <i class="fas fa-user-secret"></i> I人 (Carol男友)
                     </div>
                     
                     <div class="break"></div>
@@ -393,6 +355,16 @@
             <div class="section-title">
                 <h2>🗓️ 詳細行程</h2>
             </div>
+            
+            <div class="card warning-card">
+                <h3>🚗 自駕備忘 (To: Yo/Tony)</h3>
+                <ul>
+                    <li><strong>雪胎 (Snow Tires)</strong>：1月九重必備，取車Check單。</li>
+                    <li><strong>ETC/KEP</strong>：盡量租埋，高速費可慳好多。</li>
+                    <li><strong>天神泊車</strong>：酒店附近搵 Coin Park，過夜小心貴。</li>
+                </ul>
+            </div>
+
             <div class="day-block">
                 <div class="day-header">Day 1: 1月14日 (三)</div>
                 <div class="timeline">
@@ -430,8 +402,12 @@
                         <div class="desc"><strong>🏂 Snowboard 課程</strong> (90mins)</div>
                     </div>
                     <div class="event">
+                        <div class="time">Lunch</div>
+                        <div class="desc"><strong>🍜 滑雪場食堂</strong> (5人)<br>建議11:00早食，避開人潮。</div>
+                    </div>
+                    <div class="event">
                         <div class="time">15:20</div>
-                        <div class="desc"><strong>Carol 抵達福岡</strong><br>👉 落機即衝國際線巴士站 (1/F)<br>🚌 搭 16:08 巴士直去由布院</div>
+                        <div class="desc"><strong>Carol & I人 抵達福岡</strong><br>👉 落機即衝國際線巴士站 (1/F)<br>🚌 搭 16:08 巴士直去由布院</div>
                     </div>
                     <div class="event">
                         <div class="time">17:30</div>
@@ -448,7 +424,7 @@
                     </div>
                     <div class="event highlight-box">
                         <div class="time">Note</div>
-                        <div class="desc"><strong>🌸 Carol 組行程分離</strong><br>繼續留守由布院 (由布之愈 友裏)</div>
+                        <div class="desc"><strong>🌸 Carol & I人 行程分離</strong><br>繼續留守由布院 (由布之愈 友裏)</div>
                     </div>
                     <div class="event">
                         <div class="time">15:00</div>
@@ -479,6 +455,80 @@
                         <div class="time">17:00</div>
                         <div class="desc"><strong>👋 YWS 飛成田</strong> (19:10 GK516)</div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="food" class="hidden-section">
+            <div class="section-title">
+                <h2>🍽️ 必食餐廳指南</h2>
+                <p>已精選 Group Friendly 餐廳</p>
+            </div>
+
+            <div class="card food-card">
+                <div class="food-header">
+                    <span class="food-title">Day 1 宵夜 (5人)</span>
+                    <span class="res-badge res-ok">✅ 可預約</span>
+                </div>
+                <h3>🍲 博多華味鳥 天神西通り店</h3>
+                <div class="food-info">
+                    <p><i class="fas fa-info-circle"></i> 水炊雞名店，坐得舒服。</p>
+                    <p><i class="fas fa-clock"></i> 至 00:00 (LO 23:00)</p>
+                    <p><i class="fas fa-phone"></i> 092-732-7667</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 福岡市中央区大名1-12-63</p>
+                </div>
+            </div>
+
+            <div class="card food-card">
+                <div class="food-header">
+                    <span class="food-title">Day 2 午餐 (5人)</span>
+                    <span class="res-badge res-no">⚠️ Walk-in</span>
+                </div>
+                <h3>🍛 九重森林公園滑雪場 食堂</h3>
+                <div class="food-info">
+                    <p><i class="fas fa-info-circle"></i> 咖哩飯/拉麵，快靚正。</p>
+                    <p><i class="fas fa-yen-sign"></i> <strong>只收現金！</strong></p>
+                    <p><i class="fas fa-phone"></i> 0973-79-2200</p>
+                </div>
+            </div>
+
+            <div class="card food-card">
+                <div class="food-header">
+                    <span class="food-title">Day 3 午餐 (6人)</span>
+                    <span class="res-badge res-no">⏳ 需排隊</span>
+                </div>
+                <h3>🍱 由布まぶし 心 (金鱗湖本店)</h3>
+                <div class="food-info">
+                    <p><i class="fas fa-info-circle"></i> 必食豐後牛釜飯！一飯三食！</p>
+                    <p><i class="fas fa-clock"></i> 建議 10:15 去排 (10:30開)</p>
+                    <p><i class="fas fa-yen-sign"></i> <strong>只收現金！</strong></p>
+                    <p><i class="fas fa-phone"></i> 0977-85-7880</p>
+                </div>
+            </div>
+
+            <div class="card food-card">
+                <div class="food-header">
+                    <span class="food-title">Day 3 晚餐 (5人)</span>
+                    <span class="res-badge res-ok">✅ 必須預約</span>
+                </div>
+                <h3>🥘 博多もつ鍋 前田屋 (中洲店)</h3>
+                <div class="food-info">
+                    <p><i class="fas fa-info-circle"></i> 牛腸鍋，福岡靈魂！裝修靚。</p>
+                    <p><i class="fas fa-phone"></i> 092-262-8118</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 福岡市博多区中洲3-4-5 2F</p>
+                </div>
+            </div>
+
+            <div class="card food-card">
+                <div class="food-header">
+                    <span class="food-title">Day 4 午餐 (5人)</span>
+                    <span class="res-badge res-no">⏳ 需排隊</span>
+                </div>
+                <h3>🍤 天麩羅処ひらお 大名店</h3>
+                <div class="food-info">
+                    <p><i class="fas fa-info-circle"></i> 平民天婦羅之神，生醃魷魚任食。</p>
+                    <p><i class="fas fa-phone"></i> 092-752-7900</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 福岡市中央区大名2-6-1</p>
                 </div>
             </div>
         </section>
@@ -818,6 +868,7 @@
         <button onclick="showSection('home')" class="nav-btn active"><i class="fas fa-home"></i><br>總覽</button>
         <button onclick="showSection('flights')" class="nav-btn"><i class="fas fa-plane"></i><br>機票</button>
         <button onclick="showSection('itinerary')" class="nav-btn"><i class="fas fa-list-ul"></i><br>行程</button>
+        <button onclick="showSection('food')" class="nav-btn"><i class="fas fa-utensils"></i><br>餐廳</button>
         <button onclick="showSection('ski')" class="nav-btn"><i class="fas fa-snowflake"></i><br>攻略</button>
         <button onclick="showSection('packing')" class="nav-btn"><i class="fas fa-suitcase"></i><br>行李</button>
         <button onclick="showSection('accounts')" class="nav-btn"><i class="fas fa-calculator"></i><br>數簿</button>
