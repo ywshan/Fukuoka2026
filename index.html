@@ -124,17 +124,14 @@
         .warning-card { background: #fff5f5; border-left: 5px solid #c62828; }
         .warning-card h3 { color: #c62828; border-color: #ffcdd2; }
         
-        /* 攻略顏色分流 - 修正後 */
-        .outfit-card { border-left: 5px solid #9c27b0; background: #f3e5f5; } /* 紫色 */
+        /* 攻略顏色分流 */
+        .outfit-card { border-left: 5px solid #9c27b0; background: #f3e5f5; }
         .outfit-card h3 { color: #7b1fa2; border-bottom: 2px solid #e1bee7; }
-        
-        .tips-card-a { background: #e8f5e9; border-left: 5px solid #2e7d32; } /* 綠色 (新手) */
+        .tips-card-a { background: #e8f5e9; border-left: 5px solid #2e7d32; }
         .tips-card-a h3 { color: #1b5e20; border-bottom: 2px solid #c8e6c9; }
-        
-        .tips-card-b { background: #e3f2fd; border-left: 5px solid #1565c0; } /* 藍色 (進階) */
+        .tips-card-b { background: #e3f2fd; border-left: 5px solid #1565c0; }
         .tips-card-b h3 { color: #0d47a1; border-bottom: 2px solid #bbdefb; }
-        
-        .language-card { background: #fff3e0; border-left: 5px solid #ef6c00; } /* 橙色 (語言) */
+        .language-card { background: #fff3e0; border-left: 5px solid #ef6c00; }
         .language-card h3 { color: #e65100; border-bottom: 2px solid #ffe0b2; }
         
         .weather-card { background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%); color: white; border: none; }
@@ -147,17 +144,15 @@
         .weather-box .temp { font-size: 1.2rem; font-weight: bold; }
         .weather-box small { font-size: 0.75rem; opacity: 0.9; }
 
-        /* JMA 按鈕樣式 - 實色高對比 */
+        /* JMA 按鈕樣式 */
         .btn-jma {
             display: block; width: 100%;
-            background: white; /* 實色白底 */
-            border: none;
-            color: #1e3c72; /* 深藍字 */
-            text-align: center; 
+            background: white; border: none;
+            color: #1e3c72; text-align: center; 
             padding: 12px; border-radius: 8px; 
             text-decoration: none; font-weight: 800; font-size: 1rem;
             margin-top: 15px; 
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* 加陰影 */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15); 
             transition: transform 0.1s;
         }
         .btn-jma:active { transform: scale(0.98); }
@@ -182,7 +177,7 @@
         /* === Accounts / Form === */
         .form-container { 
             position: relative; 
-            padding-bottom: 120%; /* 顯示 Google Form 的高度比例 */
+            padding-bottom: 140%; /* 加長高度，確保 Form 顯示得靚仔 */
             height: 0; 
             overflow: hidden; 
             border-radius: 12px;
@@ -198,7 +193,16 @@
         .price-tag { font-weight: bold; color: #1e3c72; }
         .payer-badge { background: #e0f2f1; color: #00695c; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; }
         
-        .btn-google-sheet { display: block; width: 100%; background: #2e7d32; color: white; text-align: center; padding: 15px; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 1.1rem; margin-top: 10px; box-shadow: 0 4px 10px rgba(46, 125, 50, 0.3); }
+        /* 查看 Sheet 按鈕 - 藍色，區分 */
+        .btn-google-sheet { 
+            display: block; width: 100%; 
+            background: #1565c0; color: white; 
+            text-align: center; padding: 15px; 
+            border-radius: 12px; text-decoration: none; 
+            font-weight: bold; font-size: 1.1rem; 
+            margin-top: 10px; 
+            box-shadow: 0 4px 10px rgba(21, 101, 192, 0.3); 
+        }
         .btn-google-sheet:active { transform: scale(0.98); }
 
         /* === Bookings === */
@@ -677,17 +681,21 @@
                 <h2>💰 夾錢數簿 & 記帳</h2>
             </div>
 
-            <div class="card" style="padding:0; overflow:hidden;">
+            <div class="card" style="text-align:center; border-left: 5px solid #1976d2;">
+                <h3 style="color:#1976d2; border:none; margin-bottom:5px;">📝 記帳輸入 (Google Form)</h3>
+                <p style="margin-bottom:10px; font-size:0.85rem; color:#666;">邊個比錢? 幫邊個比? 喺度填！</p>
+                
                 <div class="form-container">
                     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfncYBTDOsGUjo-G2ZRBq3f7oGxIm4q7c_kQ58M8MJ_kFQjKA/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
                 </div>
             </div>
 
-            <div class="card" style="text-align:center; background:#e8f5e9; border-left: 5px solid #2e7d32;">
-                <h3 style="color:#2e7d32; border:none;">📝 每日消費記帳</h3>
-                <p>食飯、買野、雜費請入 Google Sheet！</p>
+            <div class="card" style="text-align:center; background:#e3f2fd; border-left: 5px solid #1565c0;">
+                <h3 style="color:#1565c0; border:none;">📊 查看結算 (Google Sheet)</h3>
+                <p>想知夾幾錢？撳入去睇數！(View Only)</p>
+                
                 <a href="https://docs.google.com/spreadsheets/d/1cUoEvhlABWVYpxsjMd262QR4mf7tZirp4dW0kztXmWo/edit?resourcekey=&gid=553780489#gid=553780489" target="_blank" class="btn-google-sheet">
-                    <i class="fas fa-file-excel"></i> 打開 Google Sheets
+                    <i class="fas fa-file-invoice-dollar"></i> 查看結算表
                 </a>
             </div>
 
