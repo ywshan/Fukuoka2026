@@ -174,17 +174,25 @@
         .check-card[style*="fbc02d"] { border-left: 5px solid #fbc02d; background: #fff9c4; }
         .check-card[style*="ff4081"] { border-left: 5px solid #ff4081; background: #fff0f6; }
 
-        /* === Accounts / Form === */
+        /* === Accounts / Form (Mini Ver.) === */
         .form-container { 
             position: relative; 
-            padding-bottom: 140%; /* 加長高度，確保 Form 顯示得靚仔 */
-            height: 0; 
-            overflow: hidden; 
+            width: 100%;
+            height: 420px; /* 固定高度，唔會太長 */
+            overflow-y: scroll; /* 容許內部捲動 */
+            overflow-x: hidden;
             border-radius: 12px;
             border: 1px solid #ddd;
+            background: #fff;
         }
         .form-container iframe { 
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; 
+            position: absolute; 
+            top: 0; left: 0; 
+            width: 118%; /* 100 / 0.85 補償 */
+            height: 150%; /* 預留多啲位俾佢縮放 */
+            border: 0; 
+            transform: scale(0.85); /* 縮細 85% */
+            transform-origin: top left;
         }
         
         .accounts-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
@@ -193,7 +201,6 @@
         .price-tag { font-weight: bold; color: #1e3c72; }
         .payer-badge { background: #e0f2f1; color: #00695c; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; }
         
-        /* 查看 Sheet 按鈕 - 藍色，區分 */
         .btn-google-sheet { 
             display: block; width: 100%; 
             background: #1565c0; color: white; 
@@ -681,21 +688,17 @@
                 <h2>💰 夾錢數簿 & 記帳</h2>
             </div>
 
-            <div class="card" style="text-align:center; border-left: 5px solid #1976d2;">
-                <h3 style="color:#1976d2; border:none; margin-bottom:5px;">📝 記帳輸入 (Google Form)</h3>
-                <p style="margin-bottom:10px; font-size:0.85rem; color:#666;">邊個比錢? 幫邊個比? 喺度填！</p>
-                
+            <div class="card" style="padding:0; overflow:hidden;">
                 <div class="form-container">
                     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfncYBTDOsGUjo-G2ZRBq3f7oGxIm4q7c_kQ58M8MJ_kFQjKA/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
                 </div>
             </div>
 
-            <div class="card" style="text-align:center; background:#e3f2fd; border-left: 5px solid #1565c0;">
-                <h3 style="color:#1565c0; border:none;">📊 查看結算 (Google Sheet)</h3>
-                <p>想知夾幾錢？撳入去睇數！(View Only)</p>
-                
+            <div class="card" style="text-align:center; background:#e8f5e9; border-left: 5px solid #2e7d32;">
+                <h3 style="color:#2e7d32; border:none;">📝 查看結算表 (Google Sheet)</h3>
+                <p>入完數想 Check 錢？撳呢度！</p>
                 <a href="https://docs.google.com/spreadsheets/d/1cUoEvhlABWVYpxsjMd262QR4mf7tZirp4dW0kztXmWo/edit?resourcekey=&gid=553780489#gid=553780489" target="_blank" class="btn-google-sheet">
-                    <i class="fas fa-file-invoice-dollar"></i> 查看結算表
+                    <i class="fas fa-file-excel"></i> 打開 Google Sheets
                 </a>
             </div>
 
