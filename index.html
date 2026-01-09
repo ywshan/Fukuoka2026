@@ -67,7 +67,7 @@
 
         /* === Home Styles === */
         .intro-card { text-align: center; background: white; }
-        .intro-card h2 { color: #1e3c72; margin-bottom: 5px; font-weight: 900; letter-spacing: -0.5px; }
+        .intro-card h2 { color: #1e3c72; margin-bottom: 5px; font-weight: 900; letter-spacing: -0.5px; font-size: 1.8rem; }
         .countdown-box { margin-top: 15px; background: #e3f2fd; color: #1565c0; padding: 12px; border-radius: 12px; font-weight: bold; font-size: 0.95rem; }
         
         .vibes-box {
@@ -121,8 +121,13 @@
         .highlight-box .desc { border-left: 4px solid #e91e63; background: #fff0f5; }
 
         /* === Ski & Packing === */
+        /* 背景色優化 */
         .warning-card { background: #fff5f5; border-left: 5px solid #c62828; }
         .warning-card h3 { color: #c62828; border-color: #ffcdd2; }
+        .outfit-card { border-left: 5px solid #333; background: #f5f5f5; } /* 灰色底 */
+        .tips-card { background: #e3f2fd; border-left: 5px solid #1e3c72; } /* 藍色底 */
+        .language-card { background: #fff8e1; border-left: 5px solid #ff9800; } /* 黃色底 */
+        
         .weather-card { background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%); color: white; border: none; }
         .weather-card h3 { color: white; border-color: rgba(255,255,255,0.3); }
         
@@ -139,10 +144,6 @@
         }
         .btn-jma:hover { background: rgba(255,255,255,0.3); }
 
-        .language-card { background: #fff8e1; border-left: 5px solid #ff9800; }
-        .language-card h3 { color: #f57c00; border-color: #ffe0b2; }
-        
-        .outfit-card { border-left: 5px solid #333; }
         .outfit-list { padding-left: 5px; list-style: none; }
         .outfit-list li { margin-bottom: 12px; }
         .outfit-list strong { color: #1e3c72; }
@@ -199,7 +200,7 @@
         
         <section id="home" class="active-section">
             <div class="card intro-card">
-                <h2>ARE U READYYYYYYYYYYY?????</h2>
+                <h2>ARE U READY?????</h2>
                 <p>自駕・滑雪・溫泉・美食・情緒價值之旅</p>
                 
                 <div class="vibes-box">
@@ -380,11 +381,11 @@
                     </div>
                     <div class="event">
                         <div class="time">15:20</div>
-                        <div class="desc"><strong>Carol 抵達福岡</strong> (自行去由布院)</div>
+                        <div class="desc"><strong>Carol 抵達福岡</strong><br>👉 落機即衝國際線巴士站 (1/F)<br>🚌 搭 16:08 巴士直去由布院</div>
                     </div>
                     <div class="event">
                         <div class="time">17:30</div>
-                        <div class="desc"><strong>🏨 溫泉旅館 Check-in</strong><br>📍 由布院 (Carol會合)<br>🍱 19:00 全員溫泉晚餐</div>
+                        <div class="desc"><strong>🏨 溫泉旅館 Check-in</strong><br>📍 由布院 (Carol會合)<br><strong style="color:#d32f2f;">⚠️ 18:00 準時開餐 (逾時不候)</strong></div>
                     </div>
                 </div>
             </div>
@@ -552,6 +553,12 @@
             <div class="section-title">
                 <h2>🎒 行李與必帶清單</h2>
             </div>
+            <div class="card check-card" style="border-left: 5px solid #ff4081; background: #fff0f6;">
+                <h3>😍 心情 (最重要!)</h3>
+                <ul class="checklist">
+                    <li><input type="checkbox" checked> <strong>最靚嘅心情呀！^O^</strong></li>
+                </ul>
+            </div>
             <div class="card check-card" style="border-left: 5px solid #2196f3; background: #e3f2fd;">
                 <h3>📄 必備文件 (Check!)</h3>
                 <ul class="checklist">
@@ -564,6 +571,19 @@
                     <li><input type="checkbox"> <strong>信用卡</strong> (海外簽賬)</li>
                 </ul>
             </div>
+            <div class="card check-card" style="border-left: 5px solid #009688; background: #e0f2f1;">
+                <h3>👕 衣物 & 滑雪裝備</h3>
+                <ul class="checklist">
+                    <li><input type="checkbox"> <strong>底衫褲 & 替換衣物</strong> (Must!)</li>
+                    <li><input type="checkbox"> <strong>保暖內衣 (Heattech)</strong> (上下身)</li>
+                    <li><input type="checkbox"> <strong>厚長襪</strong> (滑雪用，要過腳眼)</li>
+                    <li><input type="checkbox"> <strong>手襪 (Gloves)</strong> (最好防水)</li>
+                    <li><input type="checkbox"> <strong>頸巾 / 面罩</strong> (擋風用)</li>
+                    <li><input type="checkbox"> <strong>舒適波鞋</strong> (行街用)</li>
+                    <li><input type="checkbox"> <strong>護臀褲/護膝</strong> (著褲入面)</li>
+                    <li><input type="checkbox"> <strong>假狗 (Turtle)</strong> (怕痛就帶)</li>
+                </ul>
+            </div>
             <div class="card check-card" style="border-left: 5px solid #e91e63; background: #fce4ec;">
                 <h3>🧴 個人護理 (女仔必備)</h3>
                 <ul class="checklist">
@@ -572,17 +592,13 @@
                     <li><input type="checkbox"> <strong>梳</strong></li>
                 </ul>
             </div>
-            <div class="card check-card" style="border-left: 5px solid #009688; background: #e0f2f1;">
-                <h3>👕 衣物 & 滑雪裝備</h3>
+            <div class="card check-card" style="border-left: 5px solid #9c27b0; background: #f3e5f5;">
+                <h3>💊 仲有咩要帶？(救命神器)</h3>
                 <ul class="checklist">
-                    <li><input type="checkbox"> <strong>手襪 (Gloves)</strong> (最好防水)</li>
-                    <li><input type="checkbox"> <strong>保暖內衣 (Heattech)</strong> (上下身)</li>
-                    <li><input type="checkbox"> <strong>厚長襪</strong> (滑雪用，要過腳眼)</li>
-                    <li><input type="checkbox"> <strong>頸巾 / 面罩</strong> (擋風用)</li>
-                    <li><input type="checkbox"> <strong>底衫褲 & 替換衣物</strong></li>
-                    <li><input type="checkbox"> <strong>舒適波鞋</strong> (行街用)</li>
-                    <li><input type="checkbox"> <strong>護臀褲/護膝</strong> (著褲入面)</li>
-                    <li><input type="checkbox"> <strong>假狗 (Turtle)</strong> (怕痛就帶)</li>
+                    <li><input type="checkbox"> <strong>鎮痛貼 / 止痛藥</strong> (+/-)</li>
+                    <li><input type="checkbox"> <strong>潤唇膏 & 面霜</strong> (日本超乾)</li>
+                    <li><input type="checkbox"> <strong>暖包 (Kairo)</strong></li>
+                    <li><input type="checkbox"> <strong>大膠袋</strong> (裝污糟衫/濕毛巾)</li>
                 </ul>
             </div>
             <div class="card check-card" style="border-left: 5px solid #3f51b5; background: #e8eaf6;">
@@ -592,15 +608,6 @@
                     <li><input type="checkbox"> <strong>充電線 (Cables)</strong></li>
                     <li><input type="checkbox"> <strong>充電寶 (尿袋)</strong> (天氣凍電話好快沒電)</li>
                     <li><input type="checkbox"> <strong>Sim 卡 / 漫遊</strong></li>
-                </ul>
-            </div>
-            <div class="card check-card" style="border-left: 5px solid #9c27b0; background: #f3e5f5;">
-                <h3>💊 仲有咩要帶？(救命神器)</h3>
-                <ul class="checklist">
-                    <li><input type="checkbox"> <strong>鎮痛貼 (撒隆巴斯)</strong> (滑完雪第二日會散，必備！)</li>
-                    <li><input type="checkbox"> <strong>潤唇膏 & 面霜</strong> (日本超乾)</li>
-                    <li><input type="checkbox"> <strong>暖包 (Kairo)</strong></li>
-                    <li><input type="checkbox"> <strong>大膠袋</strong> (裝污糟衫/濕毛巾)</li>
                 </ul>
             </div>
             <div class="card check-card" style="border-left: 5px solid #fbc02d; background: #fff9c4;">
