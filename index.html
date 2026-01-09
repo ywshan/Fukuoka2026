@@ -67,8 +67,20 @@
 
         /* === Home Styles === */
         .intro-card { text-align: center; background: white; }
-        .intro-card h2 { color: #1e3c72; margin-bottom: 5px; }
+        .intro-card h2 { color: #1e3c72; margin-bottom: 5px; font-weight: 900; letter-spacing: -0.5px; }
         .countdown-box { margin-top: 15px; background: #e3f2fd; color: #1565c0; padding: 12px; border-radius: 12px; font-weight: bold; font-size: 0.95rem; }
+        
+        .vibes-box {
+            margin-top: 15px;
+            background: #fff3e0;
+            border: 2px dashed #ff9800;
+            border-radius: 12px;
+            padding: 15px;
+            color: #e65100;
+            font-weight: bold;
+            line-height: 1.8;
+        }
+        .vibes-box .quote { display: block; font-size: 1.1rem; margin: 5px 0; }
 
         .member-list { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
         .member-item { background: #f1f3f5; padding: 8px 14px; border-radius: 25px; font-size: 0.9rem; color: #555; display: flex; align-items: center; }
@@ -167,8 +179,18 @@
         
         <section id="home" class="active-section">
             <div class="card intro-card">
-                <h2>👋 準備好未？</h2>
-                <p>自駕・滑雪・溫泉・美食之旅</p>
+                <h2>ARE U READYYYYYYYYYYY?????</h2>
+                <p>自駕・滑雪・溫泉・美食・情緒價值之旅</p>
+                
+                <div class="vibes-box">
+                    <i class="fas fa-bullhorn"></i> 旅程規則：<br>
+                    只可以講：<br>
+                    <span class="quote">「好玩！」😆</span>
+                    <span class="quote">「好食！」😋</span>
+                    <span class="quote">「好開心呀！」🥳</span>
+                    <span class="quote">「你真係好叻呀！」👍</span>
+                </div>
+
                 <div class="countdown-box">
                     <i class="fas fa-clock"></i> 4日3夜精華遊
                 </div>
@@ -190,7 +212,10 @@
                         <i class="fas fa-magic"></i> Yela (情緒價值師)
                     </div>
                     <div class="member-item" style="background:#fce4ec; color:#c2185b; border: 1px solid #f48fb1;">
-                        <i class="fas fa-heart"></i> Carol & BF
+                        <i class="fas fa-heart"></i> Carol
+                    </div>
+                    <div class="member-item" style="background:#e0f2f1; color:#00695c; border: 1px solid #80cbc4;">
+                        <i class="fas fa-user-secret"></i> I人
                     </div>
                     <div class="member-item" style="background:#e0e0e0; color:#616161; border: 1px solid #bdbdbd;">
                         <i class="fas fa-home"></i> 瞓覺怪☃️ (留港消費)
@@ -258,14 +283,14 @@
                     </div>
                     <div class="divider"></div>
                     <div class="leg">
-                        <div class="leg-time">返 1/17 (YWS)</div>
-                        <span class="highlight">19:10 FUK</span> ➔ 21:00 NRT<br>
-                        <small>GK516 | 國內線</small>
-                    </div>
-                    <div class="leg mt-2">
                         <div class="leg-time">返 1/17 (Yela/Tony)</div>
                         <span class="highlight">18:05 FUK</span> ➔ HKG<br>
                         <small>國際線</small>
+                    </div>
+                    <div class="leg mt-2">
+                        <div class="leg-time">返 1/17 (YWS)</div>
+                        <span class="highlight">19:10 FUK</span> ➔ 21:00 NRT<br>
+                        <small>GK516 | 國內線</small>
                     </div>
                 </div>
             </div>
@@ -416,13 +441,65 @@
             </div>
             <div class="card language-card" style="background:#fff3e0; border-left: 5px solid #ff9800;">
                 <h3>🗣️ 教練會講咩？ (完整句子)</h3>
+                <p style="margin-bottom:10px; font-size:0.9rem;">教練通常會講呢啲指令：</p>
+                
                 <table style="width:100%; font-size:0.85rem; border-collapse: collapse;">
-                    <tr style="border-bottom:2px solid #ffcc80;"><th style="text-align:left; padding:8px 5px;">教練講</th><th style="text-align:left; padding:8px 5px;">你點做</th></tr>
-                    <tr style="border-bottom:1px solid #eee;"><td style="padding:8px 5px;"><strong>膝を曲げて (Hiza o magete)</strong></td><td style="padding:8px 5px;">曲膝頭！</td></tr>
-                    <tr style="border-bottom:1px solid #eee;"><td style="padding:8px 5px;"><strong>前を見て (Mae o mite)</strong></td><td style="padding:8px 5px;">望前面！</td></tr>
-                    <tr style="border-bottom:1px solid #eee;"><td style="padding:8px 5px;"><strong>かかとに重心 (Kakato ni juushin)</strong></td><td style="padding:8px 5px;">腳踭用力</td></tr>
-                    <tr style="border-bottom:1px solid #eee;"><td style="padding:8px 5px;"><strong>止まって！ (Tomatte!)</strong></td><td style="padding:8px 5px;">即刻停！</td></tr>
-                    <tr><td style="padding:8px 5px;"><strong>大丈夫ですか？ (Daijoubu?)</strong></td><td style="padding:8px 5px;">有無事？</td></tr>
+                    <tr style="border-bottom:2px solid #ffcc80;">
+                        <th style="text-align:left; padding:8px 5px;">教練講 (日文/英文)</th>
+                        <th style="text-align:left; padding:8px 5px;">你點做 (意思)</th>
+                    </tr>
+                    
+                    <tr style="border-bottom:1px solid #eee;">
+                        <td style="padding:8px 5px;">
+                            <strong>膝を曲げて (Hiza o magete)</strong><br>
+                            <em style="color:#888;">"Bend your knees"</em>
+                        </td>
+                        <td style="padding:8px 5px;">曲膝頭！<br>(重心放低)</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #eee;">
+                        <td style="padding:8px 5px;">
+                            <strong>前を見て (Mae o mite)</strong><br>
+                            <em style="color:#888;">"Look forward"</em>
+                        </td>
+                        <td style="padding:8px 5px;">望前面！<br>(唔好望地)</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #eee;">
+                        <td style="padding:8px 5px;">
+                            <strong>かかとに重心 (Kakato ni juushin)</strong><br>
+                            <em style="color:#888;">"Weight on heels"</em>
+                        </td>
+                        <td style="padding:8px 5px;">用腳踭用力<br>(Heel side)</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #eee;">
+                        <td style="padding:8px 5px;">
+                            <strong>ゆっくり立って (Yukkuri tatte)</strong><br>
+                            <em style="color:#888;">"Stand up slowly"</em>
+                        </td>
+                        <td style="padding:8px 5px;">慢慢起身</td>
+                    </tr>
+                    
+                    <tr style="border-bottom:1px solid #eee;">
+                        <td style="padding:8px 5px;">
+                            <strong>止まって！ (Tomatte!)</strong><br>
+                            <em style="color:#888;">"Stop!"</em>
+                        </td>
+                        <td style="padding:8px 5px;">即刻停！<br>(坐低或剎車)</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #eee;">
+                        <td style="padding:8px 5px;">
+                            <strong>大丈夫ですか？ (Daijoubu desu ka?)</strong><br>
+                            <em style="color:#888;">"Are you okay?"</em>
+                        </td>
+                        <td style="padding:8px 5px;">有無事？<br>(無事就比 OK 手勢)</td>
+                    </tr>
+                    
+                    <tr>
+                        <td style="padding:8px 5px;">
+                            <strong>一人ずつ (Hitori zutsu)</strong><br>
+                            <em style="color:#888;">"One by one"</em>
+                        </td>
+                        <td style="padding:8px 5px;">一個個嚟<br>(唔好爭先)</td>
+                    </tr>
                 </table>
             </div>
             <div class="card weather-card" style="background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%); color: white;">
