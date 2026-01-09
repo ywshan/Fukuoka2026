@@ -10,8 +10,8 @@
     <meta name="apple-mobile-web-app-title" content="福岡之旅">
     <meta name="theme-color" content="#1e3c72">
     
-    <link rel="apple-touch-icon" href="https://img.icons8.com/color/480/torii.png">
-    <link rel="icon" type="image/png" href="https://img.icons8.com/color/480/torii.png">
+    <link rel="apple-touch-icon" href="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/512/external-torii-gate-japan-flaticons-lineal-color-flat-icons-2.png">
+    <link rel="icon" type="image/png" href="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/512/external-torii-gate-japan-flaticons-lineal-color-flat-icons-2.png">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
@@ -120,6 +120,15 @@
         .checklist li:last-child { border-bottom: none; }
         .checklist input { margin-right: 12px; transform: scale(1.3); accent-color: #1e3c72; }
 
+        /* === Accounts Table === */
+        .accounts-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+        .accounts-table th { text-align: left; padding: 8px; border-bottom: 2px solid #eee; color: #888; font-size: 0.8rem; }
+        .accounts-table td { padding: 10px 8px; border-bottom: 1px solid #f0f0f0; }
+        .price-tag { font-weight: bold; color: #1e3c72; }
+        .payer-badge { background: #e0f2f1; color: #00695c; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; }
+        .btn-google-sheet { display: block; width: 100%; background: #2e7d32; color: white; text-align: center; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 10px; box-shadow: 0 4px 6px rgba(46, 125, 50, 0.2); }
+        .btn-google-sheet:active { transform: scale(0.98); }
+
         /* === Bookings === */
         .booking-group { margin-bottom: 30px; }
         .booking-group h3 { font-size: 1rem; color: #888; margin-bottom: 12px; padding-left: 5px; text-transform: uppercase; letter-spacing: 1px; }
@@ -138,10 +147,10 @@
             border-top: 1px solid rgba(0,0,0,0.05);
         }
         .nav-btn {
-            background: none; border: none; width: 16%;
-            font-size: 0.65rem; color: #999; cursor: pointer; transition: all 0.2s;
+            background: none; border: none; width: 14%; /* 7個掣，改細少少 width */
+            font-size: 0.6rem; color: #999; cursor: pointer; transition: all 0.2s;
         }
-        .nav-btn i { font-size: 1.3rem; margin-bottom: 4px; display: block; transition: transform 0.2s; }
+        .nav-btn i { font-size: 1.2rem; margin-bottom: 4px; display: block; transition: transform 0.2s; }
         .nav-btn.active { color: #1e3c72; font-weight: bold; }
         .nav-btn.active i { transform: translateY(-3px); color: #1e3c72; }
     </style>
@@ -485,6 +494,52 @@
             </div>
         </section>
 
+        <section id="accounts" class="hidden-section">
+            <div class="section-title">
+                <h2>💰 夾錢數簿 & 記帳</h2>
+            </div>
+
+            <div class="card" style="text-align:center; background:#e8f5e9; border-left: 5px solid #2e7d32;">
+                <h3 style="color:#2e7d32; border:none;">📝 每日消費記帳</h3>
+                <p>食飯、買野、雜費請入 Google Sheet！</p>
+                <a href="https://docs.google.com/spreadsheets/u/0/" target="_blank" class="btn-google-sheet">
+                    <i class="fas fa-file-excel"></i> 打開 Google Sheets
+                </a>
+            </div>
+
+            <div class="card">
+                <h3>💸 出發前已付大數 (Reference)</h3>
+                <table class="accounts-table">
+                    <tr>
+                        <th>項目</th>
+                        <th>金額 (JPY)</th>
+                        <th>墊支人</th>
+                    </tr>
+                    <tr>
+                        <td>租車 (Toyota Voxy)</td>
+                        <td class="price-tag">已付全費</td>
+                        <td><span class="payer-badge">Yo姐?</span></td>
+                    </tr>
+                    <tr>
+                        <td>由布院旅館 (主隊)</td>
+                        <td class="price-tag">¥103,000</td>
+                        <td><span class="payer-badge">Yo姐</span></td>
+                    </tr>
+                    <tr>
+                        <td>滑雪課程</td>
+                        <td class="price-tag">¥24,000</td>
+                        <td><span class="payer-badge">未付</span></td>
+                    </tr>
+                    <tr>
+                        <td>Carol 旅館 (2房)</td>
+                        <td class="price-tag">???</td>
+                        <td><span class="payer-badge">Carol</span></td>
+                    </tr>
+                </table>
+                <small style="color:#999; display:block; margin-top:10px;">* 以上為靜態紀錄，只供參考。實際夾錢請睇 Google Sheet。</small>
+            </div>
+        </section>
+
         <section id="bookings" class="hidden-section">
             <div class="section-title">
                 <h2>📑 預訂號碼 Master List</h2>
@@ -560,6 +615,7 @@
         <button onclick="showSection('itinerary')" class="nav-btn"><i class="fas fa-list-ul"></i><br>行程</button>
         <button onclick="showSection('ski')" class="nav-btn"><i class="fas fa-snowflake"></i><br>攻略</button>
         <button onclick="showSection('packing')" class="nav-btn"><i class="fas fa-suitcase"></i><br>行李</button>
+        <button onclick="showSection('accounts')" class="nav-btn"><i class="fas fa-calculator"></i><br>數簿</button>
         <button onclick="showSection('bookings')" class="nav-btn"><i class="fas fa-ticket-alt"></i><br>號碼</button>
     </nav>
 
