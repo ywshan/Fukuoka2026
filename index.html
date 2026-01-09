@@ -4,57 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>福岡之旅</title>
-    
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="福岡之旅">
     <meta name="theme-color" content="#1e3c72">
-    
     <link rel="apple-touch-icon" href="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/512/external-torii-gate-japan-flaticons-lineal-color-flat-icons-2.png">
     <link rel="icon" type="image/png" href="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/512/external-torii-gate-japan-flaticons-lineal-color-flat-icons-2.png">
-
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
     <style>
-        /* === 全局設定 === */
+        /* === CSS 樣式 (完整保留) === */
         * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f2f4f8; color: #333; padding-bottom: 90px; overflow-x: hidden; }
-
-        /* === Header === */
         header { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 25px 15px; text-align: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; }
         header h1 { font-size: 1.5rem; margin-bottom: 5px; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.2); }
         header p { font-size: 0.9rem; opacity: 0.9; letter-spacing: 1px; }
         .fa-spin-slow { animation: fa-spin 5s infinite linear; }
-
-        /* === Snow Effect === */
         .snowflake { position: fixed; top: -20px; z-index: 9999; color: #fff; font-size: 1em; user-select: none; pointer-events: none; text-shadow: 0 0 5px rgba(0,0,0,0.2); animation-name: fall; animation-timing-function: linear; animation-iteration-count: infinite; }
         @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
-
-        /* === Main Content === */
         main { padding: 20px 15px; max-width: 600px; margin: 0 auto; }
         .hidden-section { display: none; }
         .active-section { display: block; animation: fadeIn 0.4s ease-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
         .section-title { text-align: center; margin: 10px 0 25px; }
         .section-title h2 { color: #1e3c72; font-size: 1.6rem; font-weight: 700; }
         .card { background: white; border-radius: 16px; padding: 20px; margin-bottom: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); position: relative; overflow: hidden; border: 1px solid rgba(0,0,0,0.02); }
         .card h3 { font-size: 1.1rem; color: #444; margin-bottom: 15px; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; font-weight: 600; }
-
-        /* === Specific Styles === */
-        .intro-card { text-align: center; } .intro-card h2 { color: #1e3c72; font-size: 1.8rem; }
-        .vibes-box { margin-top: 15px; background: #fff3e0; border: 2px dashed #ff9800; border-radius: 12px; padding: 15px; color: #e65100; font-weight: bold; }
-        .countdown-box { margin-top: 15px; background: #e3f2fd; color: #1565c0; padding: 12px; border-radius: 12px; font-weight: bold; }
         
+        /* Specific Styles */
+        .intro-card { text-align: center; } .intro-card h2 { color: #1e3c72; font-size: 1.8rem; margin-bottom: 5px; font-weight: 900; letter-spacing: -0.5px;}
+        .vibes-box { margin-top: 15px; background: #fff3e0; border: 2px dashed #ff9800; border-radius: 12px; padding: 15px; color: #e65100; font-weight: bold; line-height: 1.8; }
+        .vibes-box .quote { display: block; font-size: 1.1rem; margin: 5px 0; }
+        .countdown-box { margin-top: 15px; background: #e3f2fd; color: #1565c0; padding: 12px; border-radius: 12px; font-weight: bold; }
         .member-list { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
         .member-item { background: #f1f3f5; padding: 8px 14px; border-radius: 25px; font-size: 0.9rem; color: #555; display: flex; align-items: center; }
         .break { flex-basis: 100%; height: 0; }
-
         .summary-list, .outfit-list, .checklist { list-style: none; padding: 0; }
         .summary-list li { display: flex; align-items: start; margin-bottom: 12px; font-size: 0.95rem; line-height: 1.5; }
         .date-badge { background: #1e3c72; color: white; padding: 2px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: bold; margin-right: 10px; min-width: 45px; text-align: center; margin-top: 2px; }
-
-        /* Flight & Timeline */
         .flight-card { border-left: 5px solid #1e3c72; }
         .flight-header { display: flex; justify-content: space-between; margin-bottom: 15px; }
         .badge { font-size: 0.7rem; padding: 4px 8px; border-radius: 6px; font-weight: bold; text-transform: uppercase; }
@@ -62,7 +48,6 @@
         .flight-route { font-size: 1rem; line-height: 1.6; }
         .highlight { color: #d32f2f; font-weight: bold; }
         .divider { height: 1px; background: #eee; margin: 12px 0; }
-        
         .day-block { margin-bottom: 30px; }
         .day-header { background: #1e3c72; color: white; padding: 10px 15px; border-radius: 10px; font-weight: bold; margin-bottom: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         .timeline { border-left: 3px solid #e0e0e0; margin-left: 10px; padding-left: 25px; }
@@ -71,38 +56,26 @@
         .event .time { font-weight: 800; color: #1e3c72; font-size: 0.95rem; margin-bottom: 6px; }
         .event .desc { background: white; padding: 12px 15px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 1px solid #eee; }
         .highlight-box .desc { border-left: 4px solid #e91e63; background: #fff0f5; }
-
-        /* Food */
         .food-card { border-left: 5px solid #ff9800; }
         .food-header { display: flex; justify-content: space-between; align-items: start; margin-bottom: 10px; }
         .food-title { font-weight: bold; font-size: 1.1rem; color: #333; }
-        .res-badge { padding: 3px 8px; border-radius: 4px; color: white; font-size: 0.75rem; font-weight: bold; white-space: nowrap; margin-left: 10px; }
+        .res-badge { padding: 3px 8px; border-radius: 4px; color: white; font-size: 0.75rem; font-weight: bold; margin-left: 10px; }
         .res-ok { background: #4caf50; } .res-no { background: #f44336; }
-        .food-info { font-size: 0.9rem; color: #555; line-height: 1.6; }
-        .food-info i { width: 20px; color: #ff9800; text-align: center; margin-right: 5px; }
-
-        /* Ski & Packing */
+        .food-info p { margin-bottom: 5px; } .food-info i { width: 20px; color: #ff9800; text-align: center; margin-right: 5px; }
+        
+        /* Ski & Packing Colors */
         .warning-card { background: #fff5f5; border-left: 5px solid #c62828; } .warning-card h3 { color: #c62828; border-color: #ffcdd2; }
         .outfit-card { border-left: 5px solid #9c27b0; background: #f3e5f5; } .outfit-card h3 { color: #7b1fa2; border-bottom: 2px solid #e1bee7; }
         .tips-card-a { background: #e8f5e9; border-left: 5px solid #2e7d32; } .tips-card-a h3 { color: #1b5e20; border-bottom: 2px solid #c8e6c9; }
         .tips-card-b { background: #e3f2fd; border-left: 5px solid #1565c0; } .tips-card-b h3 { color: #0d47a1; border-bottom: 2px solid #bbdefb; }
         .language-card { background: #fff3e0; border-left: 5px solid #ef6c00; } .language-card h3 { color: #e65100; border-bottom: 2px solid #ffe0b2; }
-        
-        .weather-card { background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%); color: white; } .weather-card h3 { color: white; border-color: rgba(255,255,255,0.3); }
+        .weather-card { background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%); color: white; }
         .weather-container { display: flex; gap: 10px; margin-bottom: 10px; }
         .weather-box { flex: 1; padding: 10px; border-radius: 10px; color: white; text-align: center; }
-        .weather-city { background: linear-gradient(135deg, #4facfe, #00f2fe); }
-        .weather-ski { background: linear-gradient(135deg, #a18cd1, #fbc2eb); }
-        .weather-box .temp { font-size: 1.2rem; font-weight: bold; }
-        
-        .btn-jma { display: block; width: 100%; background: white; border: none; color: #1e3c72; text-align: center; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 800; font-size: 1rem; margin-top: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15); transition: transform 0.1s; }
-        .btn-jma:active { transform: scale(0.98); }
-
-        .outfit-list li { margin-bottom: 12px; } .outfit-list strong { color: #1e3c72; }
+        .weather-city { background: linear-gradient(135deg, #4facfe, #00f2fe); } .weather-ski { background: linear-gradient(135deg, #a18cd1, #fbc2eb); }
+        .btn-jma { display: block; width: 100%; background: white; color: #1e3c72; text-align: center; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 800; margin-top: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.15); }
         .checklist li { margin-bottom: 12px; display: flex; align-items: center; border-bottom: 1px dashed #eee; padding-bottom: 8px; }
         .checklist input { margin-right: 12px; transform: scale(1.3); accent-color: #1e3c72; }
-        .alert-card { border: 2px solid #c62828; background: #fff; }
-        
         .check-card[style*="2196f3"] { border-left: 5px solid #2196f3; background: #e3f2fd; }
         .check-card[style*="e91e63"] { border-left: 5px solid #e91e63; background: #fce4ec; }
         .check-card[style*="009688"] { border-left: 5px solid #009688; background: #e0f2f1; }
@@ -110,65 +83,45 @@
         .check-card[style*="9c27b0"] { border-left: 5px solid #9c27b0; background: #f3e5f5; }
         .check-card[style*="fbc02d"] { border-left: 5px solid #fbc02d; background: #fff9c4; }
         .check-card[style*="ff4081"] { border-left: 5px solid #ff4081; background: #fff0f6; }
-
-        /* === Accounts (Realtime) === */
-        .form-container { position: relative; width: 100%; height: 420px; overflow-y: scroll; overflow-x: hidden; border-radius: 12px; border: 1px solid #ddd; background: #fff; }
-        .form-container iframe { position: absolute; top: 0; left: 0; width: 118%; height: 150%; border: 0; transform: scale(0.85); transform-origin: top left; }
+        .alert-card { border: 2px solid #c62828; background: #fff; }
         
+        /* Accounts */
+        .form-container { position: relative; width: 100%; height: 420px; overflow-y: scroll; border-radius: 12px; border: 1px solid #ddd; background: #fff; }
+        .form-container iframe { position: absolute; top: 0; left: 0; width: 118%; height: 150%; border: 0; transform: scale(0.85); transform-origin: top left; }
         .stats-container { display: flex; gap: 10px; margin-bottom: 20px; }
-        .stat-box { flex: 1; background: #333; color: white; padding: 15px; border-radius: 12px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .stat-label { font-size: 0.8rem; opacity: 0.8; }
-        .stat-val { font-size: 1.4rem; font-weight: bold; margin-top: 5px; }
-        .stat-jpy { color: #fbc2eb; } .stat-hkd { color: #4facfe; }
-
-        .live-list { list-style: none; padding: 0; }
-        .live-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #eee; animation: flash 1s; }
-        .live-info { flex: 1; }
-        .live-title { font-weight: bold; font-size: 1rem; color: #333; display: block; }
-        .live-meta { font-size: 0.8rem; color: #888; }
-        .live-amt { font-weight: bold; color: #1e3c72; font-size: 1rem; }
-        @keyframes flash { 0% { background-color: #e3f2fd; } 100% { background-color: transparent; } }
-        .spinner { text-align: center; padding: 20px; color: #999; font-size: 0.9rem; }
-
+        .stat-box { flex: 1; background: #333; color: white; padding: 15px; border-radius: 12px; text-align: center; }
+        .stat-val { font-size: 1.4rem; font-weight: bold; } .stat-jpy { color: #fbc2eb; } .stat-hkd { color: #4facfe; }
+        .live-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee; }
+        .live-title { font-weight: bold; display: block; } .live-meta { font-size: 0.8rem; color: #888; }
+        .live-amt { font-weight: bold; color: #1e3c72; }
         .accounts-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
-        .accounts-table th { text-align: left; padding: 8px; border-bottom: 2px solid #eee; color: #888; font-size: 0.8rem; }
-        .accounts-table td { padding: 10px 8px; border-bottom: 1px solid #f0f0f0; }
-        .price-tag { font-weight: bold; color: #1e3c72; }
-        .payer-badge { background: #e0f2f1; color: #00695c; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; }
-
-        /* Bookings */
-        .booking-group { margin-bottom: 30px; }
-        .booking-group h3 { font-size: 1rem; color: #888; margin-bottom: 12px; padding-left: 5px; text-transform: uppercase; letter-spacing: 1px; }
-        .booking-item { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; background: white; padding: 15px; border-radius: 12px; margin-bottom: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.03); border: 1px solid #f0f0f0; transition: transform 0.1s; }
-        .booking-item:active { transform: scale(0.99); }
-        .booking-item .label { font-weight: 600; font-size: 0.95rem; width: 100%; margin-bottom: 8px; color: #333; }
-        .booking-item .code { font-family: 'Courier New', monospace; font-weight: bold; background: #f1f3f5; padding: 6px 10px; border-radius: 6px; color: #1e3c72; letter-spacing: 0.5px; border: 1px solid #e9ecef; }
-        .booking-item small { width: 100%; display: block; margin-top: 6px; color: #888; font-size: 0.8rem; }
-
-        /* Bottom Nav */
+        .accounts-table th { text-align: left; padding: 8px; border-bottom: 2px solid #eee; color: #888; } .accounts-table td { padding: 10px 8px; border-bottom: 1px solid #f0f0f0; }
+        .price-tag { font-weight: bold; color: #1e3c72; } .payer-badge { background: #e0f2f1; color: #00695c; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; }
+        .btn-google-sheet { display: block; width: 100%; background: #1565c0; color: white; text-align: center; padding: 15px; border-radius: 12px; text-decoration: none; font-weight: bold; margin-top: 10px; }
+        
+        /* Bookings & Nav */
+        .booking-item { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; background: white; padding: 15px; border-radius: 12px; margin-bottom: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.03); border: 1px solid #f0f0f0; }
+        .booking-item .label { font-weight: 600; width: 100%; margin-bottom: 8px; } .booking-item .code { font-family: monospace; font-weight: bold; background: #f1f3f5; padding: 6px 10px; border-radius: 6px; color: #1e3c72; }
         .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); display: flex; justify-content: space-around; padding: 10px 0 15px; box-shadow: 0 -5px 20px rgba(0,0,0,0.05); z-index: 999; border-top: 1px solid rgba(0,0,0,0.05); }
-        .nav-btn { background: none; border: none; width: 12.5%; font-size: 0.6rem; color: #999; cursor: pointer; transition: all 0.2s; padding: 0; }
-        .nav-btn i { font-size: 1.1rem; margin-bottom: 4px; display: block; transition: transform 0.2s; }
+        .nav-btn { background: none; border: none; width: 12.5%; font-size: 0.6rem; color: #999; cursor: pointer; padding: 0; }
+        .nav-btn i { font-size: 1.1rem; margin-bottom: 4px; display: block; }
         .nav-btn.active { color: #1e3c72; font-weight: bold; }
         .nav-btn.active i { transform: translateY(-3px); color: #1e3c72; }
     </style>
 </head>
 <body>
-
     <header>
         <div class="header-icon"><i class="fas fa-snowflake fa-spin-slow"></i></div>
         <h1>福岡集合小組 <i class="fas fa-torii-gate"></i></h1>
         <p>2026年1月14日 - 1月17日</p>
     </header>
-
     <main id="content">
-        
         <section id="home" class="active-section">
             <div class="card intro-card">
                 <h2>ARE U READY?????</h2>
-                <p>自駕・滑雪・溫泉・美食・情緒價值之旅</p>
                 <div class="vibes-box">
                     <i class="fas fa-bullhorn"></i> 旅程規則：<br>
+                    只可以講：<br>
                     <span class="quote">「好玩！」😆</span><span class="quote">「好食！」😋</span>
                     <span class="quote">「好開心呀！」🥳</span><span class="quote">「你真係好叻呀！」👍</span>
                 </div>
@@ -177,14 +130,14 @@
             <div class="card member-card">
                 <h3>👥 成員名單</h3>
                 <div class="member-list">
-                    <div class="member-item" style="background:#e3f2fd; color:#0d47a1; border: 1px solid #90caf9; font-weight:bold;"><i class="fas fa-crown"></i> YWS (freerider)</div>
-                    <div class="member-item" style="background:#f3e5f5; color:#6a1b9a; border: 1px solid #ce93d8;"><i class="fas fa-car"></i> Yo姐 (車手1)</div>
-                    <div class="member-item" style="background:#e8f5e9; color:#2e7d32; border: 1px solid #a5d6a7;"><i class="fas fa-car"></i> Tony (車手2)</div>
-                    <div class="member-item" style="background:#fff3e0; color:#ef6c00; border: 1px solid #ffcc80;"><i class="fas fa-magic"></i> Yela (情緒價值師)</div>
+                    <div class="member-item" style="background:#e3f2fd; color:#0d47a1; border: 1px solid #90caf9; font-weight:bold;"><i class="fas fa-crown"></i> YWS</div>
+                    <div class="member-item" style="background:#f3e5f5; color:#6a1b9a; border: 1px solid #ce93d8;"><i class="fas fa-car"></i> Yo姐</div>
+                    <div class="member-item" style="background:#e8f5e9; color:#2e7d32; border: 1px solid #a5d6a7;"><i class="fas fa-car"></i> Tony</div>
+                    <div class="member-item" style="background:#fff3e0; color:#ef6c00; border: 1px solid #ffcc80;"><i class="fas fa-magic"></i> Yela</div>
                     <div class="member-item" style="background:#fce4ec; color:#c2185b; border: 1px solid #f48fb1;"><i class="fas fa-heart"></i> Carol</div>
-                    <div class="member-item" style="background:#fce4ec; color:#c2185b; border: 1px solid #f48fb1;"><i class="fas fa-user-secret"></i> I人 (Carol男友)</div>
+                    <div class="member-item" style="background:#fce4ec; color:#c2185b; border: 1px solid #f48fb1;"><i class="fas fa-user-secret"></i> I人</div>
                     <div class="break"></div>
-                    <div class="member-item" style="background:#e0e0e0; color:#616161; border: 1px solid #bdbdbd;"><i class="fas fa-home"></i> 瞓覺怪☃️ (留港消費)</div>
+                    <div class="member-item" style="background:#e0e0e0; color:#616161; border: 1px solid #bdbdbd;"><i class="fas fa-home"></i> 瞓覺怪☃️</div>
                 </div>
             </div>
             <div class="card summary-card">
@@ -202,36 +155,35 @@
             <div class="section-title"><h2>✈️ 航班時間表</h2></div>
             <div class="card flight-card">
                 <div class="flight-header"><span class="badge cx">CX 國泰</span><h3>Yo姐 (最早到)</h3></div>
-                <div class="flight-route"><div class="leg"><div class="leg-time">去 1/14</div>11:05 HKG ➔ <span class="highlight">15:20 FUK</span><br><small>CX588 (Ref: FXL72G)</small></div><div class="divider"></div><div class="leg"><div class="leg-time">返 1/17</div><span class="highlight">14:10 FUK</span> ➔ 17:20 HKG<br><small>CX513 | 國際線</small></div></div>
+                <div class="flight-route"><div class="leg"><div class="leg-time">去 1/14</div>11:05 HKG ➔ <span class="highlight">15:20 FUK</span><br><small>CX588</small></div><div class="divider"></div><div class="leg"><div class="leg-time">返 1/17</div><span class="highlight">14:10 FUK</span> ➔ 17:20 HKG<br><small>CX513</small></div></div>
             </div>
             <div class="card flight-card">
                 <div class="flight-header"><span class="badge lcc">內陸機</span><h3>YWS, Yela, Tony</h3></div>
-                <div class="flight-route"><div class="leg"><div class="leg-time">去 1/14 (集合)</div>16:15 NRT ➔ <span class="highlight">18:35 FUK</span><br><small>MM365 (YWS) | 國內線</small></div><div class="divider"></div><div class="leg"><div class="leg-time">返 1/17 (Yela/Tony)</div><span class="highlight">18:05 FUK</span> ➔ HKG<br><small>國際線</small></div><div class="leg mt-2"><div class="leg-time">返 1/17 (YWS)</div><span class="highlight">19:10 FUK</span> ➔ 21:00 NRT<br><small>GK516 | 國內線</small></div></div>
+                <div class="flight-route"><div class="leg"><div class="leg-time">去 1/14</div>16:15 NRT ➔ <span class="highlight">18:35 FUK</span><br><small>MM365 (YWS)</small></div><div class="divider"></div><div class="leg"><div class="leg-time">返 1/17 (Yela/Tony)</div><span class="highlight">18:05 FUK</span> ➔ HKG</div><div class="leg mt-2"><div class="leg-time">返 1/17 (YWS)</div><span class="highlight">19:10 FUK</span> ➔ 21:00 NRT</div></div>
             </div>
             <div class="card flight-card">
                 <div class="flight-header"><span class="badge cx">CX 國泰</span><h3>Carol & BF</h3></div>
-                <div class="flight-route"><div class="leg"><div class="leg-time">去 1/15 (遲一日)</div>11:05 HKG ➔ <span class="highlight">15:20 FUK</span><br><small>CX588 | 國際線</small></div><div class="divider"></div><div class="leg"><div class="leg-time">返 1/22 (遲幾日)</div>14:10 FUK ➔ 17:20 HKG<br><small>CX513 | 國際線</small></div></div>
+                <div class="flight-route"><div class="leg"><div class="leg-time">去 1/15 (遲一日)</div>11:05 HKG ➔ <span class="highlight">15:20 FUK</span><br><small>CX588</small></div><div class="divider"></div><div class="leg"><div class="leg-time">返 1/22</div>14:10 FUK ➔ 17:20 HKG</div></div>
             </div>
         </section>
 
         <section id="itinerary" class="hidden-section">
             <div class="section-title"><h2>🗓️ 詳細行程</h2></div>
-            <div class="card warning-card"><h3>🚗 自駕備忘 (To: Yo/Tony)</h3><ul><li><strong>雪胎 (Snow Tires)</strong>：1月九重必備，取車Check單。</li><li><strong>ETC/KEP</strong>：盡量租埋，高速費可慳好多。</li><li><strong>天神泊車</strong>：酒店附近搵 Coin Park，過夜小心貴。</li></ul></div>
-            <div class="day-block"><div class="day-header">Day 1: 1月14日 (三)</div><div class="timeline"><div class="event"><div class="time">15:20</div><div class="desc"><strong>Yo姐 抵達</strong><br><span class="note">天神行街</span></div></div><div class="event"><div class="time">18:35</div><div class="desc"><strong>東京組 抵達</strong><br><span class="note">YWS, Yela, Tony 集合！</span></div></div><div class="event"><div class="time">19:00</div><div class="desc"><strong>🚗 取車</strong> (IX Rental)</div></div><div class="event"><div class="time">20:30</div><div class="desc"><strong>Check-in & 補給</strong><br>🏨 天神東方快捷 (PIN: 9276)</div></div></div></div>
-            <div class="day-block"><div class="day-header">Day 2: 1月15日 (四)</div><div class="timeline"><div class="event"><div class="time">06:00</div><div class="desc"><strong>🥶 早起出發</strong> (往九重)</div></div><div class="event"><div class="time">09:10</div><div class="desc"><span class="badge deadline">DEADLINE</span> <strong>滑雪學校報到</strong></div></div><div class="event"><div class="time">09:30</div><div class="desc"><strong>🏂 Snowboard</strong> (90mins)</div></div><div class="event"><div class="time">Lunch</div><div class="desc"><strong>🍜 滑雪場食堂</strong> (5人)<br>建議11:00早食，避開人潮。</div></div><div class="event"><div class="time">15:20</div><div class="desc"><strong>Carol & I人 抵達</strong><br>👉 國際線巴士站 (1/F) 搭 16:08 巴士往由布院</div></div><div class="event"><div class="time">17:30</div><div class="desc"><strong>🏨 溫泉旅館 Check-in</strong><br>📍 Carol會合<br><strong style="color:#d32f2f;">⚠️ 18:00 準時開餐</strong></div></div></div></div>
+            <div class="card warning-card"><h3>🚗 自駕備忘</h3><ul><li><strong>雪胎</strong>：1月九重必備。</li><li><strong>ETC/KEP</strong>：盡量租埋，慳高速費。</li><li><strong>泊車</strong>：天神泊車好貴，搵定 Coin Park。</li></ul></div>
+            <div class="day-block"><div class="day-header">Day 1: 1月14日 (三)</div><div class="timeline"><div class="event"><div class="time">15:20</div><div class="desc"><strong>Yo姐 抵達</strong> (國際線)</div></div><div class="event"><div class="time">18:35</div><div class="desc"><strong>東京組 抵達</strong> (國內線)</div></div><div class="event"><div class="time">19:00</div><div class="desc"><strong>🚗 取車</strong> (IX Rental)</div></div><div class="event"><div class="time">20:30</div><div class="desc"><strong>Check-in</strong><br>🏨 天神東方快捷 (PIN: 9276)</div></div></div></div>
+            <div class="day-block"><div class="day-header">Day 2: 1月15日 (四)</div><div class="timeline"><div class="event"><div class="time">06:00</div><div class="desc"><strong>🥶 早起出發</strong> (往九重)</div></div><div class="event"><div class="time">09:10</div><div class="desc"><span class="badge deadline">DEADLINE</span> <strong>滑雪學校報到</strong></div></div><div class="event"><div class="time">09:30</div><div class="desc"><strong>🏂 Snowboard</strong> (90mins)</div></div><div class="event"><div class="time">Lunch</div><div class="desc"><strong>🍜 滑雪場食堂</strong> (5人)<br>建議11:00早食。</div></div><div class="event"><div class="time">15:20</div><div class="desc"><strong>Carol & I人 抵達</strong><br>🚌 16:08 巴士往由布院</div></div><div class="event"><div class="time">17:30</div><div class="desc"><strong>🏨 溫泉旅館 Check-in</strong><br>📍 Carol會合<br><strong style="color:#d32f2f;">⚠️ 18:00 準時開餐</strong></div></div></div></div>
             <div class="day-block"><div class="day-header">Day 3: 1月16日 (五)</div><div class="timeline"><div class="event"><div class="time">11:00</div><div class="desc"><strong>大隊 Check-out</strong></div></div><div class="event highlight-box"><div class="time">Note</div><div class="desc"><strong>🌸 Carol & I人 行程分離</strong><br>留守由布院</div></div><div class="event"><div class="time">15:00</div><div class="desc"><strong>🚗 機場還車</strong></div></div><div class="event"><div class="time">16:00</div><div class="desc"><strong>🏨 Canvas 中洲</strong></div></div></div></div>
             <div class="day-block"><div class="day-header">Day 4: 1月17日 (六)</div><div class="timeline"><div class="event"><div class="time">12:00</div><div class="desc"><strong>👋 Yo姐 飛</strong></div></div><div class="event"><div class="time">16:00</div><div class="desc"><strong>👋 Yela/Tony 飛</strong></div></div><div class="event"><div class="time">17:00</div><div class="desc"><strong>👋 YWS 飛</strong></div></div></div></div>
         </section>
 
         <section id="food" class="hidden-section">
             <div class="section-title"><h2>🍽️ 必食餐廳指南</h2><p>已精選 Group Friendly 餐廳</p></div>
-            <div class="card food-card"><div class="food-header"><span class="food-title">Day 1 宵夜 (5人)</span><span class="res-badge res-ok">✅ 可預約</span></div><h3>🍲 博多華味鳥 天神西通り店</h3><div class="food-info"><p><i class="fas fa-info-circle"></i> 水炊雞名店，坐得舒服。</p><p><i class="fas fa-clock"></i> 至 00:00 (LO 23:00)</p><p><i class="fas fa-phone"></i> 092-732-7667</p></div></div>
-            <div class="card food-card"><div class="food-header"><span class="food-title">Day 2 午餐 (5人)</span><span class="res-badge res-no">⚠️ Walk-in</span></div><h3>🍛 九重森林公園滑雪場 食堂</h3><div class="food-info"><p><i class="fas fa-info-circle"></i> 咖哩飯/拉麵，快靚正。</p><p><i class="fas fa-yen-sign"></i> <strong>只收現金！</strong></p><p><i class="fas fa-phone"></i> 0973-79-2200</p></div></div>
-            <div class="card food-card"><div class="food-header"><span class="food-title">Day 3 午餐 (6人)</span><span class="res-badge res-no">⏳ 需排隊</span></div><h3>🍱 由布まぶし 心 (金鱗湖本店)</h3><div class="food-info"><p><i class="fas fa-info-circle"></i> 必食豐後牛釜飯！</p><p><i class="fas fa-clock"></i> 建議 10:15 排隊</p><p><i class="fas fa-yen-sign"></i> <strong>只收現金！</strong></p><p><i class="fas fa-phone"></i> 0977-85-7880</p></div></div>
-            <div class="card food-card"><div class="food-header"><span class="food-title">Day 3 晚餐 (5人)</span><span class="res-badge res-ok">✅ 必須預約</span></div><h3>🥘 博多もつ鍋 前田屋 (中洲店)</h3><div class="food-info"><p><i class="fas fa-info-circle"></i> 牛腸鍋，福岡靈魂！</p><p><i class="fas fa-phone"></i> 092-262-8118</p></div></div>
+            <div class="card food-card"><div class="food-header"><span class="food-title">Day 1 宵夜 (5人)</span><span class="res-badge res-ok">✅ 可預約</span></div><h3>🍲 博多華味鳥 天神西通り店</h3><div class="food-info"><p><i class="fas fa-info-circle"></i> 水炊雞名店，舒服。</p><p><i class="fas fa-phone"></i> 092-732-7667</p></div></div>
+            <div class="card food-card"><div class="food-header"><span class="food-title">Day 2 午餐 (5人)</span><span class="res-badge res-no">⚠️ Walk-in</span></div><h3>🍛 九重森林公園滑雪場 食堂</h3><div class="food-info"><p><i class="fas fa-info-circle"></i> 咖哩飯/拉麵。</p><p><i class="fas fa-yen-sign"></i> <strong>只收現金！</strong></p><p><i class="fas fa-phone"></i> 0973-79-2200</p></div></div>
+            <div class="card food-card"><div class="food-header"><span class="food-title">Day 3 午餐 (6人)</span><span class="res-badge res-no">⏳ 需排隊</span></div><h3>🍱 由布まぶし 心 (金鱗湖)</h3><div class="food-info"><p><i class="fas fa-info-circle"></i> 必食豐後牛釜飯！</p><p><i class="fas fa-clock"></i> 建議 10:15 排隊</p><p><i class="fas fa-yen-sign"></i> <strong>只收現金！</strong></p><p><i class="fas fa-phone"></i> 0977-85-7880</p></div></div>
+            <div class="card food-card"><div class="food-header"><span class="food-title">Day 3 晚餐 (5人)</span><span class="res-badge res-ok">✅ 必須預約</span></div><h3>🥘 博多もつ鍋 前田屋 (中洲)</h3><div class="food-info"><p><i class="fas fa-info-circle"></i> 牛腸鍋，福岡靈魂！</p><p><i class="fas fa-phone"></i> 092-262-8118</p></div></div>
             <div class="card food-card"><div class="food-header"><span class="food-title">Day 4 午餐 (5人)</span><span class="res-badge res-no">⏳ 需排隊</span></div><h3>🍤 天麩羅処ひらお 大名店</h3><div class="food-info"><p><i class="fas fa-info-circle"></i> 生醃魷魚任食。</p><p><i class="fas fa-phone"></i> 092-752-7900</p></div></div>
         </section>
-
         <section id="ski" class="hidden-section">
             <div class="section-title"><h2>🏂 滑雪攻略大全</h2></div>
             <div class="card warning-card"><h3>⚠️ 必讀重點</h3><ul><li><strong>09:10 DEADLINE</strong></li><li><strong>只收現金</strong></li></ul></div>
@@ -240,9 +192,10 @@
                 <div class="weather-box weather-ski"><h4>🏔️ 滑雪場</h4><div class="temp">-3°C - 5°C</div></div>
             </div>
             <a href="https://www.data.jma.go.jp/multi/yoho/yoho_detail.html?code=400010&lang=cn_zt" target="_blank" class="btn-jma"><i class="fas fa-external-link-alt"></i> JMA 實時天氣 (福岡)</a>
-            <div class="card outfit-card" style="margin-top:20px;"><h3>👔 穿搭指南</h3><ul class="outfit-list"><li>Heattech > 衛衣 > 雪褸</li><li>Leggings > 護臀 > 雪褲</li></ul></div>
-            <div class="card tips-card-a"><h3>🐣 新手保命</h3><ul><li>望前面！唔好望地！</li><li>Toes Up (腳趾翹起)</li></ul></div>
-            <div class="card language-card"><h3>🗣️ 教練指令</h3><table><tr><td>膝 (Hiza)</td><td>曲腳</td></tr><tr><td>前 (Mae)</td><td>望前</td></tr></table></div>
+            <div class="card outfit-card" style="margin-top:20px;"><h3>👔 穿搭指南 (紫色)</h3><ul class="outfit-list"><li>Heattech > 衛衣 > 雪褸</li><li>Leggings > 護臀 > 雪褲</li></ul></div>
+            <div class="card tips-card-a"><h3>🐣 新手保命 (綠色)</h3><ul><li>望前面！唔好望地！</li><li>Toes Up (腳趾翹起)</li></ul></div>
+            <div class="card tips-card-b"><h3>🎿 進階技巧 (藍色)</h3><ul><li>Toe Side 跪低</li><li>C-Turn 轉彎</li></ul></div>
+            <div class="card language-card"><h3>🗣️ 教練指令 (橙色)</h3><table><tr><td>膝 (Hiza)</td><td>曲腳</td></tr><tr><td>前 (Mae)</td><td>望前</td></tr><tr><td>止 (Tomatte)</td><td>停</td></tr></table></div>
         </section>
 
         <section id="packing" class="hidden-section">
@@ -261,7 +214,7 @@
             <div class="section-title"><h2>💰 夾錢數簿 & 記帳</h2></div>
             <div class="card" style="padding:0; overflow:hidden; border-left: 5px solid #1976d2;">
                 <div style="padding:15px; text-align:center; background:#e3f2fd;">
-                    <h3 style="color:#1976d2; border:none; margin:0;">📝 記帳輸入</h3>
+                    <h3 style="color:#1976d2; border:none; margin:0;">📝 記帳輸入 (Google Form)</h3>
                     <p style="font-size:0.8rem; color:#666; margin-top:5px;">填完表，下面會自動彈出黎！</p>
                 </div>
                 <div class="form-container">
@@ -311,7 +264,6 @@
                 <div class="booking-item"><div class="label">1/16 Canvas 2</div><div class="code">PIN: 5357</div></div>
             </div>
         </section>
-
     </main>
 
     <nav class="bottom-nav">
