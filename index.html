@@ -21,7 +21,9 @@
             background-color: #f2f4f8; color: #333; padding-bottom: 90px;
             overflow-x: hidden;
         }
-
+        /* 新增：購物卡樣式 */
+        .shop-card { border-left: 5px solid #9c27b0; background: #f3e5f5; }
+        .shop-card h3 { color: #7b1fa2; border-bottom: 2px solid #e1bee7; }
         /* === Header === */
         header {
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
@@ -433,79 +435,92 @@
             </div>
         </section>
 
-        <section id="food" class="hidden-section">
-            <div class="section-title">
-                <h2>🍽️ 必食餐廳指南</h2>
-                <p>已精選 Group Friendly 餐廳</p>
-            </div>
+ <section id="explore" class="hidden-section">
+    <div class="section-title">
+        <h2>🛍️ 食・買・玩推介</h2>
+        <p>餐廳人數已更新 | 順路購物點</p>
+    </div>
 
-            <div class="card food-card">
-                <div class="food-header">
-                    <span class="food-title">Day 1 宵夜 (5人)</span>
-                    <span class="res-badge res-ok">✅ 可預約</span>
-                </div>
-                <h3>🍲 博多華味鳥 天神西通り店</h3>
-                <div class="food-info">
-                    <p><i class="fas fa-info-circle"></i> 水炊雞名店，坐得舒服。</p>
-                    <p><i class="fas fa-clock"></i> 至 00:00 (LO 23:00)</p>
-                    <p><i class="fas fa-phone"></i> 092-732-7667</p>
-                    <p><i class="fas fa-map-marker-alt"></i> 福岡市中央区大名1-12-63</p>
-                </div>
-            </div>
+    <div class="card shop-card">
+        <div class="food-header">
+            <span class="food-title">🛍️ 必經 Outlet 推介</span>
+            <span class="res-badge" style="background:#9c27b0;">Day 3</span>
+        </div>
+        <h3>鳥栖 Premium Outlets</h3>
+        <div class="food-info">
+            <p><i class="fas fa-map-pin"></i> <strong>位置完美：</strong> 喺由布院返福岡嘅必經之路上 (佐賀縣)，唔洗特登兜路！</p>
+            <p><i class="fas fa-car"></i> <strong>車程：</strong> 由布院出發約 1hr 15min 到；行完返福岡只需 45min。</p>
+            <p><i class="fas fa-shopping-bag"></i> <strong>品牌：</strong> Nike, Adidas, Coach, Beams, Lego...</p>
+            <p><i class="fas fa-clock"></i> 營業時間：10:00 - 20:00</p>
+        </div>
+    </div>
 
-            <div class="card food-card">
-                <div class="food-header">
-                    <span class="food-title">Day 2 午餐 (5人)</span>
-                    <span class="res-badge res-no">⚠️ Walk-in</span>
-                </div>
-                <h3>🍛 九重森林公園滑雪場 食堂</h3>
-                <div class="food-info">
-                    <p><i class="fas fa-info-circle"></i> 咖哩飯/拉麵，快靚正。</p>
-                    <p><i class="fas fa-yen-sign"></i> <strong>只收現金！</strong></p>
-                    <p><i class="fas fa-phone"></i> 0973-79-2200</p>
-                </div>
-            </div>
+    <div class="card food-card">
+        <div class="food-header">
+            <span class="food-title">Day 1 宵夜 (4人)</span>
+            <span class="res-badge res-ok">✅ 可預約</span>
+        </div>
+        <h3>🍲 博多華味鳥 天神西通り店</h3>
+        <div class="food-info">
+            <p><strong>成員：</strong> Yo, Tony, YWS, Yela</p>
+            <p><i class="fas fa-info-circle"></i> 水炊雞名店，坐得舒服。</p>
+            <p><i class="fas fa-clock"></i> 至 00:00 (LO 23:00)</p>
+            <p><i class="fas fa-map-marker-alt"></i> 福岡市中央区大名1-12-63</p>
+        </div>
+    </div>
 
-            <div class="card food-card">
-                <div class="food-header">
-                    <span class="food-title">Day 3 午餐 (6人)</span>
-                    <span class="res-badge res-no">⏳ 需排隊</span>
-                </div>
-                <h3>🍱 由布まぶし 心 (金鱗湖本店)</h3>
-                <div class="food-info">
-                    <p><i class="fas fa-info-circle"></i> 必食豐後牛釜飯！一飯三食！</p>
-                    <p><i class="fas fa-clock"></i> 建議 10:15 去排 (10:30開)</p>
-                    <p><i class="fas fa-yen-sign"></i> <strong>只收現金！</strong></p>
-                    <p><i class="fas fa-phone"></i> 0977-85-7880</p>
-                </div>
-            </div>
+    <div class="card food-card">
+        <div class="food-header">
+            <span class="food-title">Day 2 溫泉晚餐 (6人)</span>
+            <span class="res-badge res-ok">✅ 已Book房</span>
+        </div>
+        <h3>🍱 由布之愈 友裏 (旅館晚餐)</h3>
+        <div class="food-info">
+            <p><strong>成員：</strong> 全員齊人！(Carol/I人 Join)</p>
+            <p><i class="fas fa-exclamation-triangle" style="color:red;"></i> <strong>18:00 準時開餐！</strong> 遲到無得食。</p>
+        </div>
+    </div>
 
-            <div class="card food-card">
-                <div class="food-header">
-                    <span class="food-title">Day 3 晚餐 (5人)</span>
-                    <span class="res-badge res-ok">✅ 必須預約</span>
-                </div>
-                <h3>🥘 博多もつ鍋 前田屋 (中洲店)</h3>
-                <div class="food-info">
-                    <p><i class="fas fa-info-circle"></i> 牛腸鍋，福岡靈魂！裝修靚。</p>
-                    <p><i class="fas fa-phone"></i> 092-262-8118</p>
-                    <p><i class="fas fa-map-marker-alt"></i> 福岡市博多区中洲3-4-5 2F</p>
-                </div>
-            </div>
+    <div class="card food-card">
+        <div class="food-header">
+            <span class="food-title">Day 3 午餐 (6人)</span>
+            <span class="res-badge res-no">⏳ 需排隊</span>
+        </div>
+        <h3>🥘 由布まぶし 心 (金鱗湖本店)</h3>
+        <div class="food-info">
+            <p><strong>成員：</strong> 全員齊人！食飽分道揚鑣。</p>
+            <p><i class="fas fa-info-circle"></i> 必食豐後牛釜飯！一飯三食！</p>
+            <p><i class="fas fa-clock"></i> 建議 10:15 去排 (10:30開)</p>
+            <p><i class="fas fa-yen-sign"></i> <strong>只收現金！</strong></p>
+        </div>
+    </div>
 
-            <div class="card food-card">
-                <div class="food-header">
-                    <span class="food-title">Day 4 午餐 (5人)</span>
-                    <span class="res-badge res-no">⏳ 需排隊</span>
-                </div>
-                <h3>🍤 天麩羅処ひらお 大名店</h3>
-                <div class="food-info">
-                    <p><i class="fas fa-info-circle"></i> 平民天婦羅之神，生醃魷魚任食。</p>
-                    <p><i class="fas fa-phone"></i> 092-752-7900</p>
-                    <p><i class="fas fa-map-marker-alt"></i> 福岡市中央区大名2-6-1</p>
-                </div>
-            </div>
-        </section>
+    <div class="card food-card">
+        <div class="food-header">
+            <span class="food-title">Day 3 晚餐 (4人)</span>
+            <span class="res-badge res-ok">✅ 必須預約</span>
+        </div>
+        <h3>🍲 博多もつ鍋 前田屋 (中洲店)</h3>
+        <div class="food-info">
+            <p><strong>成員：</strong> 主隊 4人 (Carol 留守由布院)</p>
+            <p><i class="fas fa-info-circle"></i> 牛腸鍋，福岡靈魂！</p>
+            <p><i class="fas fa-map-marker-alt"></i> 福岡市博多区中洲3-4-5 2F</p>
+        </div>
+    </div>
+    
+    <div class="card food-card">
+        <div class="food-header">
+            <span class="food-title">Day 4 午餐 (4人)</span>
+            <span class="res-badge res-no">⏳ 需排隊</span>
+        </div>
+        <h3>🍤 天麩羅処ひらお 大名店</h3>
+        <div class="food-info">
+            <p><strong>成員：</strong> 主隊 4人</p>
+            <p><i class="fas fa-info-circle"></i> 平民天婦羅之神，生醃魷魚任食。</p>
+            <p><i class="fas fa-map-marker-alt"></i> 福岡市中央区大名2-6-1</p>
+        </div>
+    </div>
+</section>
 
         <section id="ski" class="hidden-section">
             <div class="section-title">
@@ -683,124 +698,159 @@
         </section>
 
         <section id="accounts" class="hidden-section">
-            <div class="section-title">
-                <h2>💰 夾錢數簿 & 記帳</h2>
-            </div>
+    <div class="section-title">
+        <h2>💰 預算與數簿</h2>
+    </div>
 
-            <div class="card" style="padding:0; overflow:hidden; border-left: 5px solid #1976d2;">
-                <div style="padding:15px; text-align:center; background:#e3f2fd;">
-                    <h3 style="color:#1976d2; border:none; margin:0;">📝 記帳輸入</h3>
-                    <p style="font-size:0.8rem; color:#666; margin-top:5px;">填完表，下面會自動彈出黎！</p>
-                </div>
-                <div class="form-container">
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfncYBTDOsGUjo-G2ZRBq3f7oGxIm4q7c_kQ58M8MJ_kFQjKA/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
-                </div>
-            </div>
+    <div class="card" style="padding:0; overflow:hidden; border-left: 5px solid #1976d2;">
+        <div style="padding:15px; text-align:center; background:#e3f2fd;">
+            <h3 style="color:#1976d2; border:none; margin:0;">📝 記帳輸入</h3>
+            <p style="font-size:0.8rem; color:#666; margin-top:5px;">公數填呢度，下面自動出！</p>
+        </div>
+        <div class="form-container">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfncYBTDOsGUjo-G2ZRBq3f7oGxIm4q7c_kQ58M8MJ_kFQjKA/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
+        </div>
+    </div>
 
-            <div class="stats-container">
-                <div class="stat-box">
-                    <div class="stat-label">總開支 (JPY)</div>
-                    <div class="stat-val stat-jpy" id="total-jpy">0</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-label">總開支 (HKD)</div>
-                    <div class="stat-val stat-hkd" id="total-hkd">0</div>
-                </div>
-            </div>
+    <div class="stats-container">
+        <div class="stat-box">
+            <div class="stat-label">總開支 (JPY)</div>
+            <div class="stat-val stat-jpy" id="total-jpy">0</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-label">總開支 (HKD)</div>
+            <div class="stat-val stat-hkd" id="total-hkd">0</div>
+        </div>
+    </div>
 
-            <div class="card">
-                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
-                    <h3>📜 最新 5 筆記錄</h3>
-                    <span id="update-badge" style="font-size:0.7rem; color:#aaa;"><i class="fas fa-sync fa-spin"></i> 同步中...</span>
-                </div>
-                
-                <div id="loading-spinner" class="spinner">
-                    <i class="fas fa-circle-notch fa-spin"></i> 正在讀取 Google Sheet...
-                </div>
-                
-                <ul class="live-list" id="transaction-list">
-                    </ul>
+    <div class="card">
+        <h3>💸 已知/預算開支 (Reference)</h3>
+        <p style="font-size:0.8rem; color:#666; margin-bottom:15px;">以下係固定數，食飯買野另外計。</p>
+        <table class="accounts-table">
+            <thead>
+                <tr>
+                    <th style="width:50%">項目</th>
+                    <th style="width:30%">金額</th>
+                    <th style="width:20%">墊支</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>租車 (Toyota Voxy)</strong><br><small>1/14-1/16</small></td>
+                    <td class="price-tag">HK$1,071</td>
+                    <td><span class="payer-badge" style="background:#e8f5e9; color:#2e7d32;">Tony</span></td>
+                </tr>
+                <tr>
+                    <td><strong>國際車牌費</strong><br><small>行政費</small></td>
+                    <td class="price-tag">HK$80</td>
+                    <td><span class="payer-badge" style="background:#e8f5e9; color:#2e7d32;">Tony</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Day 1 酒店</strong><br><small>天神東方快捷</small></td>
+                    <td class="price-tag" style="color:#999;">待定</td>
+                    <td><span class="payer-badge" style="background:#ffcdd2; color:#c62828;">未付</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Day 2 酒店 (主隊)</strong><br><small>由布之愈 友裏 (4人)</small></td>
+                    <td class="price-tag">¥103,000</td>
+                    <td><span class="payer-badge" style="background:#f3e5f5; color:#6a1b9a;">Yo姐</span></td>
+                </tr>
+                <tr style="background:#fafafa;">
+                    <td><span style="color:#888;">Day 2 酒店 (Carol)</span><br><small>由布之愈 友裏 (2人)</small></td>
+                    <td class="price-tag" style="color:#888;">HK$5,172</td>
+                    <td><span class="payer-badge" style="background:#eee; color:#666;">Carol</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Day 3 酒店</strong><br><small>Canvas 中洲 (2房)</small></td>
+                    <td class="price-tag" style="color:#999;">待定</td>
+                    <td><span class="payer-badge" style="background:#ffcdd2; color:#c62828;">未付</span></td>
+                </tr>
+                <tr>
+                    <td><strong>滑雪教練 (90min)</strong><br><small>預算 (4人)</small></td>
+                    <td class="price-tag">¥24,000</td>
+                    <td><span class="payer-badge" style="background:#ffcdd2; color:#c62828;">現金</span></td>
+                </tr>
+                <tr>
+                    <td><strong>滑雪入場劵</strong><br><small>預算 (4人)</small></td>
+                    <td class="price-tag">¥6,000</td>
+                    <td><span class="payer-badge" style="background:#ffcdd2; color:#c62828;">現金</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-                <a href="https://docs.google.com/spreadsheets/d/1cUoEvhlABWVYpxsjMd262QR4mf7tZirp4dW0kztXmWo/edit?resourcekey=&gid=553780489#gid=553780489" target="_blank" style="display:block; text-align:center; margin-top:15px; color:#1e3c72; font-weight:bold; font-size:0.9rem; text-decoration:none;">
-                    查看完整 Google Sheet <i class="fas fa-external-link-alt"></i>
-                </a>
-            </div>
-        </section>
+    <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+            <h3>📜 最新入數記錄</h3>
+            <span id="update-badge" style="font-size:0.7rem; color:#aaa;"><i class="fas fa-sync fa-spin"></i> 同步中...</span>
+        </div>
+        <div id="loading-spinner" class="spinner"><i class="fas fa-circle-notch fa-spin"></i> 讀取中...</div>
+        <ul class="live-list" id="transaction-list"></ul>
+    </div>
+</section>
 
-        <section id="bookings" class="hidden-section">
-            <div class="section-title">
-                <h2>📑 預訂號碼 Master List</h2>
-            </div>
-            <div class="booking-group">
-                <h3>✈️ 機票 PNR</h3>
-                <div class="booking-item">
-                    <div class="label">Yo姐 (CX)</div>
-                    <div class="code">FXL72G</div>
-                </div>
-                <div class="booking-item">
-                    <div class="label">YWS (Peach 去)</div>
-                    <div class="code">CZ8YU3</div>
-                    <small>Order: 6102454699</small>
-                </div>
-                <div class="booking-item">
-                    <div class="label">YWS (Jetstar 返)</div>
-                    <div class="code">NNZZ6J</div>
-                </div>
-                <div class="booking-item">
-                    <div class="label">Carol (CX)</div>
-                    <div class="code">E7TSCU</div>
-                </div>
-            </div>
-            <div class="booking-group">
-                <h3>🏨 住宿予約</h3>
-                <div class="booking-item">
-                    <div class="label">1/14 天神東方快捷 (主隊)</div>
-                    <div class="code">PIN: 9276</div>
-                    <small>Ref: 1359040369461999</small>
-                </div>
-                <div class="booking-item">
-                    <div class="label">1/15 由布院 (主隊)</div>
-                    <div class="code">8QAXAK26</div>
-                    <small>Name: ChanNgaYing Chuchuiyiu</small>
-                </div>
-                <div class="booking-item" style="border-left: 4px solid #e91e63;">
-                    <div class="label">Carol 由布院 (2晚)</div>
-                    <div class="code">PIN: 5760</div>
-                    <small>Ref: 22315093093464</small>
-                </div>
-                <div class="booking-item" style="border-left: 4px solid #007bff;">
-                    <div class="label">1/16 Canvas 中洲 (房1)</div>
-                    <div class="code">PIN: 8686</div>
-                    <small>Ref: ...358501526</small>
-                </div>
-                <div class="booking-item" style="border-left: 4px solid #007bff;">
-                    <div class="label">1/16 Canvas 中洲 (房2)</div>
-                    <div class="code">PIN: 5357</div>
-                    <small>Ref: ...358501499</small>
-                </div>
-            </div>
-            <div class="booking-group">
-                <h3>🚗 租車 & 滑雪</h3>
-                <div class="booking-item">
-                    <div class="label">Toyota Voxy (IX Rental)</div>
-                    <div class="code">已付全費</div>
-                    <small>取/還: 福岡機場</small>
-                </div>
-                <div class="booking-item">
-                    <div class="label">滑雪學校 (1/15)</div>
-                    <div class="code">YWS / Yu Wing Shan</div>
-                    <small>現金 ¥6,000/人; 入場劵 ¥1,500/人</small>
-                </div>
-            </div>
-        </section>
 
+<section id="bookings" class="hidden-section">
+    <div class="section-title">
+        <h2>📑 預訂號碼 Master List</h2>
+    </div>
+    
+    <div class="booking-group">
+        <h3>🏨 住宿予約</h3>
+        <div class="booking-item">
+            <div class="label">1/14 天神東方快捷 (主隊)</div>
+            <div class="code">PIN: 9276</div>
+            <small>Ref: ...1999</small>
+        </div>
+        <div class="booking-item">
+            <div class="label">1/15 由布院 (主隊 4人)</div>
+            <div class="code">8QAXAK26</div>
+            <small>Name: ChanNgaYing Chuchuiyiu</small>
+        </div>
+        <div class="booking-item" style="border-left: 4px solid #e91e63;">
+            <div class="label">1/15 由布院 (Carol 2人)</div>
+            <div class="code">PIN: 5760</div>
+            <small>Ref: ...3464 (Detached Room)</small>
+        </div>
+        <div class="booking-item" style="border-left: 4px solid #007bff;">
+            <div class="label">1/16 Canvas 中洲 (房1)</div>
+            <div class="code">PIN: 8686</div>
+            <small>Ref: ...1526</small>
+        </div>
+        <div class="booking-item" style="border-left: 4px solid #007bff;">
+            <div class="label">1/16 Canvas 中洲 (房2)</div>
+            <div class="code">PIN: 5357</div>
+            <small>Ref: ...1499</small>
+        </div>
+    </div>
+
+    <div class="booking-group">
+        <h3>✈️ 機票 PNR</h3>
+        <div class="booking-item">
+            <div class="label">Yo姐 (CX)</div>
+            <div class="code">FXL72G</div>
+        </div>
+        <div class="booking-item">
+            <div class="label">YWS (Peach 去)</div>
+            <div class="code">CZ8YU3</div>
+        </div>
+        <div class="booking-item">
+            <div class="label">YWS (Jetstar 返)</div>
+            <div class="code">NNZZ6J</div>
+        </div>
+        <div class="booking-item">
+            <div class="label">Carol (CX)</div>
+            <div class="code">E7TSCU</div>
+        </div>
+    </div>
+</section>
     </main>
 
     <nav class="bottom-nav">
         <button onclick="showSection('home')" class="nav-btn active"><i class="fas fa-home"></i><br>總覽</button>
         <button onclick="showSection('flights')" class="nav-btn"><i class="fas fa-plane"></i><br>機票</button>
         <button onclick="showSection('itinerary')" class="nav-btn"><i class="fas fa-list-ul"></i><br>行程</button>
-        <button onclick="showSection('food')" class="nav-btn"><i class="fas fa-utensils"></i><br>餐廳</button>
+        <button onclick="showSection('explore')" class="nav-btn"><i class="fas fa-utensils"></i><br>餐廳</button>
         <button onclick="showSection('ski')" class="nav-btn"><i class="fas fa-snowflake"></i><br>攻略</button>
         <button onclick="showSection('packing')" class="nav-btn"><i class="fas fa-suitcase"></i><br>行李</button>
         <button onclick="showSection('accounts')" class="nav-btn"><i class="fas fa-calculator"></i><br>數簿</button>
