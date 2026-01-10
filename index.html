@@ -724,6 +724,15 @@
     </div>
 
     <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+            <h3>📜 最新入數記錄</h3>
+            <span id="update-badge" style="font-size:0.7rem; color:#aaa;"><i class="fas fa-sync fa-spin"></i> 同步中...</span>
+        </div>
+        <div id="loading-spinner" class="spinner"><i class="fas fa-circle-notch fa-spin"></i> 讀取中...</div>
+        <ul class="live-list" id="transaction-list"></ul>
+    </div>
+
+    <div class="card">
         <h3>💸 已知/預算開支 (Reference)</h3>
         <p style="font-size:0.8rem; color:#666; margin-bottom:15px;">以下係固定數，食飯買野另外計。</p>
         <table class="accounts-table">
@@ -779,14 +788,7 @@
         </table>
     </div>
 
-    <div class="card">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
-            <h3>📜 最新入數記錄</h3>
-            <span id="update-badge" style="font-size:0.7rem; color:#aaa;"><i class="fas fa-sync fa-spin"></i> 同步中...</span>
-        </div>
-        <div id="loading-spinner" class="spinner"><i class="fas fa-circle-notch fa-spin"></i> 讀取中...</div>
-        <ul class="live-list" id="transaction-list"></ul>
-    </div>
+
 </section>
 
 
@@ -850,7 +852,7 @@
         <button onclick="showSection('home')" class="nav-btn active"><i class="fas fa-home"></i><br>總覽</button>
         <button onclick="showSection('flights')" class="nav-btn"><i class="fas fa-plane"></i><br>機票</button>
         <button onclick="showSection('itinerary')" class="nav-btn"><i class="fas fa-list-ul"></i><br>行程</button>
-        <button onclick="showSection('explore')" class="nav-btn"><i class="fas fa-utensils"></i><br>餐廳</button>
+        <button onclick="showSection('explore')" class="nav-btn"><i class="fas fa-utensils"></i><br>推介</button>
         <button onclick="showSection('ski')" class="nav-btn"><i class="fas fa-snowflake"></i><br>攻略</button>
         <button onclick="showSection('packing')" class="nav-btn"><i class="fas fa-suitcase"></i><br>行李</button>
         <button onclick="showSection('accounts')" class="nav-btn"><i class="fas fa-calculator"></i><br>數簿</button>
