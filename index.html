@@ -6,8 +6,10 @@
     <title>福岡之旅</title>
     
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#1e3c72">
+
     <link rel="apple-touch-icon" href="https://as1.ftcdn.net/jpg/04/08/92/94/1000_F_408929460_bhxuyi9Bt9pkK9VIABp2yQTXNM1MgKf7.jpg">
     <link rel="icon" type="image/png" href="https://as1.ftcdn.net/jpg/04/08/92/94/1000_F_408929460_bhxuyi9Bt9pkK9VIABp2yQTXNM1MgKf7.jpg">
 
@@ -212,7 +214,7 @@
                 <div class="vibes-box">
                     <i class="fas fa-bullhorn"></i> 旅程規則：淨係可以講<br>
                     <span class="quote">「好玩！」😆、「好食！」😋</span>
-                    <span class="quote">「好開心！」🥳</span>
+                    <span class="quote">「好開心呀！」🥳</span>
                     <span class="quote">「你真係好叻呀！」👍</span>
                 </div>
                 <div class="countdown-box">
@@ -724,6 +726,12 @@
         </div>
     </div>
 
+    <div style="text-align:center; margin-bottom:20px;">
+        <a href="https://docs.google.com/spreadsheets/d/1cUoEvhlABWVYpxsjMd262QR4mf7tZirp4dW0kztXmWo/edit" target="_blank" style="display:inline-block; background:#188038; color:white; padding:10px 20px; border-radius:50px; text-decoration:none; font-weight:bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: transform 0.1s;">
+            <i class="fas fa-file-excel"></i> 查看完整 Google Sheet 數簿
+        </a>
+    </div>
+
     <div class="card">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
             <h3>📜 最新入數記錄</h3>
@@ -732,13 +740,7 @@
         <div id="loading-spinner" class="spinner"><i class="fas fa-circle-notch fa-spin"></i> 讀取中...</div>
         <ul class="live-list" id="transaction-list"></ul>
     </div>
-            
-<div style="text-align:center; margin-bottom:20px;">
-    <a href="https://docs.google.com/spreadsheets/d/1cUoEvhlABWVYpxsjMd262QR4mf7tZirp4dW0kztXmWo/edit" target="_blank" style="display:inline-block; background:#188038; color:white; padding:10px 20px; border-radius:50px; text-decoration:none; font-weight:bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: transform 0.1s;">
-        <i class="fas fa-file-excel"></i> 查看完整 Google Sheet 數簿
-    </a>
-</div>
-            
+
     <div class="card">
         <h3>💸 已知/預算開支 (Reference)</h3>
         <p style="font-size:0.8rem; color:#666; margin-bottom:15px;">以下係固定數，食飯買野另外計。</p>
@@ -863,31 +865,24 @@
     <script>
         // === 1. 頁面切換邏輯 ===
         function showSection(sectionId) {
-            // 隱藏所有分頁
             const sections = document.querySelectorAll('main section');
             sections.forEach(section => {
                 section.classList.remove('active-section');
                 section.classList.add('hidden-section');
             });
-            // 顯示選中的分頁
             const target = document.getElementById(sectionId);
             if (target) {
                 target.classList.remove('hidden-section');
                 target.classList.add('active-section');
             }
-
-            // 更新底部導航按鈕狀態
             const btns = document.querySelectorAll('.nav-btn');
             btns.forEach(btn => {
                 btn.classList.remove('active');
             });
-            // 加亮對應按鈕
             const clickedBtn = Array.from(btns).find(btn => btn.getAttribute('onclick').includes(sectionId));
             if (clickedBtn) {
                 clickedBtn.classList.add('active');
             }
-            
-            // 回到頂部
             window.scrollTo(0, 0);
         }
 
@@ -895,28 +890,18 @@
         function createSnowflake() {
             const snowflake = document.createElement('div');
             snowflake.classList.add('snowflake');
-            // 隨機揀雪花圖案
             snowflake.innerHTML = Math.random() > 0.5 ? '❄' : '❅';
-            
-            // 隨機位置、大小、透明度、速度
             snowflake.style.left = Math.random() * 100 + 'vw';
-            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's'; // 2-5秒跌落黎
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
             snowflake.style.opacity = Math.random();
-            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px'; // 10px-20px 大小
-            
+            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
             document.body.appendChild(snowflake);
-            // 跌完之後刪除 (防止電話變慢)
-            setTimeout(() => {
-                snowflake.remove();
-            }, 5000);
+            setTimeout(() => { snowflake.remove(); }, 5000);
         }
-
-        // 每 200毫秒 整一粒雪花
         setInterval(createSnowflake, 200);
 
-        // === 3. 🚀 核心：偽實時更新邏輯 (V20 New!) ===
-        
-        // 已替換為你的 Script URL
+        // === 3. 數簿連線邏輯 ===
+        // 已更新為你的私人 Google Script URL
         const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwR4H8wyBkYgjJ7vlnTFxngDygZYOBoRE1qQI4TF6PUzahgk1jeEE7BsHiYQokrDr9x/exec";
         let isFetching = false;
         async function fetchRealTimeData() {
@@ -924,7 +909,6 @@
             isFetching = true;
             
             const badge = document.getElementById('update-badge');
-            // badge.innerHTML = '<i class="fas fa-sync fa-spin"></i> 更新中...';
             try {
                 const response = await fetch(GOOGLE_SCRIPT_URL);
                 const data = await response.json();
@@ -947,12 +931,10 @@
             const totalJpyEl = document.getElementById('total-jpy');
             const totalHkdEl = document.getElementById('total-hkd');
             
-            // 1. 計算總數
             let sumJpy = 0;
             let sumHkd = 0;
             
             data.forEach(row => {
-                // 假設 Google Sheet 欄位順序: [0]Time, [1]Item, [2]Amount, [3]Currency, [4]Payer
                 let amt = parseFloat(row.amount) || 0;
                 if (row.currency === 'JPY') sumJpy += amt;
                 if (row.currency === 'HKD') sumHkd += amt;
@@ -961,10 +943,8 @@
             totalJpyEl.innerText = sumJpy.toLocaleString();
             totalHkdEl.innerText = sumHkd.toLocaleString();
             
-            // 2. 更新列表 (只顯示最新 5 筆)
             list.innerHTML = '';
-            const recent = data.slice(0, 5); // 假設 data 已經係 reverse order
-            
+            const recent = data.slice(0, 5);
             recent.forEach(row => {
                 const li = document.createElement('li');
                 li.className = 'live-item';
@@ -980,35 +960,26 @@
                 list.appendChild(li);
             });
         }
-
-        // 啟動自動輪詢 (每 4 秒 Check 一次)
         setInterval(fetchRealTimeData, 4000);
-        // 第一次載入即刻 Check
         fetchRealTimeData();
+
         // === 4. 🎒 行李清單自動儲存 (Local Storage) ===
         // 就算 F5 刷新，剔過的野都會留低！
         function initPackingList() {
-            // 搵出所有行李頁面嘅 Checkbox
             const checkboxes = document.querySelectorAll('#packing input[type="checkbox"]');
-
             checkboxes.forEach((box, index) => {
-                // 為每個格仔比一個獨一無二嘅 ID (例如: packing_0, packing_1...)
                 const storageKey = 'packing_chk_' + index;
-
-                // A. 載入網頁時：檢查有無 Save 過，有就剔返
+                // 1. 載入時 Check 狀態
                 const savedState = localStorage.getItem(storageKey);
                 if (savedState === 'true') {
                     box.checked = true;
                 }
-
-                // B. 當你 Tick 個陣：即刻 Save 入電話記憶體
+                // 2. 改變時 Save 狀態
                 box.addEventListener('change', function() {
                     localStorage.setItem(storageKey, this.checked);
                 });
             });
         }
-
-        // 啟動儲存功能
         initPackingList();
     </script>
 </body>
