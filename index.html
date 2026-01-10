@@ -43,7 +43,8 @@
             position: fixed; top: -20px; z-index: 9999;
             color: #fff; font-size: 1em; user-select: none; pointer-events: none;
             text-shadow: 0 0 5px rgba(0,0,0,0.2);
-            animation-name: fall; animation-timing-function: linear; animation-iteration-count: infinite;
+            animation-name: fall;
+            animation-timing-function: linear; animation-iteration-count: infinite;
         }
         @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
 
@@ -59,7 +60,8 @@
 
         /* === Cards === */
         .card {
-            background: white; border-radius: 16px; padding: 20px; margin-bottom: 20px;
+            background: white;
+            border-radius: 16px; padding: 20px; margin-bottom: 20px;
             box-shadow: 0 10px 20px rgba(0,0,0,0.05); position: relative; overflow: hidden;
             border: 1px solid rgba(0,0,0,0.02);
         }
@@ -183,7 +185,7 @@
         .booking-item:active { transform: scale(0.99); }
         .booking-item .label { font-weight: 600; font-size: 0.95rem; width: 100%; margin-bottom: 8px; color: #333; }
         .booking-item .code { font-family: 'Courier New', monospace; font-weight: bold; background: #f1f3f5; padding: 6px 10px; border-radius: 6px; color: #1e3c72; letter-spacing: 0.5px; border: 1px solid #e9ecef; }
-        .booking-item small { width: 100%; display: block; margin-top: 6px; color: #888; font-size: 0.8rem; }
+        .booking-item small { width: 100%; display: block; margin-top: 6px; color: #888; font-size: 0.8rem; word-break: break-all; }
 
         /* === Bottom Nav === */
         .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); display: flex; justify-content: space-around; padding: 10px 0 15px; box-shadow: 0 -5px 20px rgba(0,0,0,0.05); z-index: 999; border-top: 1px solid rgba(0,0,0,0.05); }
@@ -434,92 +436,92 @@
             </div>
         </section>
 
- <section id="explore" class="hidden-section">
-    <div class="section-title">
-        <h2>🛍️ 食・買・玩推介</h2>
-        <p>餐廳人數已更新 | 順路購物點</p>
-    </div>
+        <section id="explore" class="hidden-section">
+            <div class="section-title">
+                <h2>🛍️ 食・買・玩推介</h2>
+                <p>餐廳人數已更新 | 順路購物點</p>
+            </div>
 
-    <div class="card shop-card">
-        <div class="food-header">
-            <span class="food-title">🛍️ 必經 Outlet 推介</span>
-            <span class="res-badge" style="background:#9c27b0;">Day 3</span>
-        </div>
-        <h3>鳥栖 Premium Outlets</h3>
-        <div class="food-info">
-            <p><i class="fas fa-map-pin"></i> <strong>位置完美：</strong> 喺由布院返福岡嘅必經之路上 (佐賀縣)，唔洗特登兜路！</p>
-            <p><i class="fas fa-car"></i> <strong>車程：</strong> 由布院出發約 1hr 15min 到；行完返福岡只需 45min。</p>
-            <p><i class="fas fa-shopping-bag"></i> <strong>品牌：</strong> Nike, Adidas, Coach, Beams, Lego...</p>
-            <p><i class="fas fa-clock"></i> 營業時間：10:00 - 20:00</p>
-        </div>
-    </div>
+            <div class="card shop-card">
+                <div class="food-header">
+                    <span class="food-title">🛍️ 必經 Outlet 推介</span>
+                    <span class="res-badge" style="background:#9c27b0;">Day 3</span>
+                </div>
+                <h3>鳥栖 Premium Outlets</h3>
+                <div class="food-info">
+                    <p><i class="fas fa-map-pin"></i> <strong>位置完美：</strong> 喺由布院返福岡嘅必經之路上 (佐賀縣)，唔洗特登兜路！</p>
+                    <p><i class="fas fa-car"></i> <strong>車程：</strong> 由布院出發約 1hr 15min 到；行完返福岡只需 45min。</p>
+                    <p><i class="fas fa-shopping-bag"></i> <strong>品牌：</strong> Nike, Adidas, Coach, Beams, Lego...</p>
+                    <p><i class="fas fa-clock"></i> 營業時間：10:00 - 20:00</p>
+                </div>
+            </div>
 
-    <div class="card food-card">
-        <div class="food-header">
-            <span class="food-title">Day 1 宵夜 (4人)</span>
-            <span class="res-badge res-ok">✅ 可預約</span>
-        </div>
-        <h3>🍲 博多華味鳥 天神西通り店</h3>
-        <div class="food-info">
-            <p><strong>成員：</strong> Yo, Tony, YWS, Yela</p>
-            <p><i class="fas fa-info-circle"></i> 水炊雞名店，坐得舒服。</p>
-            <p><i class="fas fa-clock"></i> 至 00:00 (LO 23:00)</p>
-            <p><i class="fas fa-map-marker-alt"></i> 福岡市中央区大名1-12-63</p>
-        </div>
-    </div>
+            <div class="card food-card">
+                <div class="food-header">
+                    <span class="food-title">Day 1 宵夜 (4人)</span>
+                    <span class="res-badge res-ok">✅ 可預約</span>
+                </div>
+                <h3>🍲 博多華味鳥 天神西通り店</h3>
+                <div class="food-info">
+                    <p><strong>成員：</strong> Yo, Tony, YWS, Yela</p>
+                    <p><i class="fas fa-info-circle"></i> 水炊雞名店，坐得舒服。</p>
+                    <p><i class="fas fa-clock"></i> 至 00:00 (LO 23:00)</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 福岡市中央区大名1-12-63</p>
+                </div>
+            </div>
 
-    <div class="card food-card">
-        <div class="food-header">
-            <span class="food-title">Day 2 溫泉晚餐 (6人)</span>
-            <span class="res-badge res-ok">✅ 已Book房</span>
-        </div>
-        <h3>🍱 由布之愈 友裏 (旅館晚餐)</h3>
-        <div class="food-info">
-            <p><strong>成員：</strong> 全員齊人！(Carol/I人 Join)</p>
-            <p><i class="fas fa-exclamation-triangle" style="color:red;"></i> <strong>18:00 準時開餐！</strong> 遲到無得食。</p>
-        </div>
-    </div>
+            <div class="card food-card">
+                <div class="food-header">
+                    <span class="food-title">Day 2 溫泉晚餐 (6人)</span>
+                    <span class="res-badge res-ok">✅ 已Book房</span>
+                </div>
+                <h3>🍱 由布之愈 友裏 (旅館晚餐)</h3>
+                <div class="food-info">
+                    <p><strong>成員：</strong> 全員齊人！(Carol/I人 Join)</p>
+                    <p><i class="fas fa-exclamation-triangle" style="color:red;"></i> <strong>18:00 準時開餐！</strong> 遲到無得食。</p>
+                </div>
+            </div>
 
-    <div class="card food-card">
-        <div class="food-header">
-            <span class="food-title">Day 3 午餐 (6人)</span>
-            <span class="res-badge res-no">⏳ 需排隊</span>
-        </div>
-        <h3>🥘 由布まぶし 心 (金鱗湖本店)</h3>
-        <div class="food-info">
-            <p><strong>成員：</strong> 全員齊人！食飽分道揚鑣。</p>
-            <p><i class="fas fa-info-circle"></i> 必食豐後牛釜飯！一飯三食！</p>
-            <p><i class="fas fa-clock"></i> 建議 10:15 去排 (10:30開)</p>
-            <p><i class="fas fa-yen-sign"></i> <strong>只收現金！</strong></p>
-        </div>
-    </div>
+            <div class="card food-card">
+                <div class="food-header">
+                    <span class="food-title">Day 3 午餐 (6人)</span>
+                    <span class="res-badge res-no">⏳ 需排隊</span>
+                </div>
+                <h3>🥘 由布まぶし 心 (金鱗湖本店)</h3>
+                <div class="food-info">
+                    <p><strong>成員：</strong> 全員齊人！食飽分道揚鑣。</p>
+                    <p><i class="fas fa-info-circle"></i> 必食豐後牛釜飯！一飯三食！</p>
+                    <p><i class="fas fa-clock"></i> 建議 10:15 去排 (10:30開)</p>
+                    <p><i class="fas fa-yen-sign"></i> <strong>只收現金！</strong></p>
+                </div>
+            </div>
 
-    <div class="card food-card">
-        <div class="food-header">
-            <span class="food-title">Day 3 晚餐 (4人)</span>
-            <span class="res-badge res-ok">✅ 必須預約</span>
-        </div>
-        <h3>🍲 博多もつ鍋 前田屋 (中洲店)</h3>
-        <div class="food-info">
-            <p><strong>成員：</strong> 主隊 4人 (Carol 留守由布院)</p>
-            <p><i class="fas fa-info-circle"></i> 牛腸鍋，福岡靈魂！</p>
-            <p><i class="fas fa-map-marker-alt"></i> 福岡市博多区中洲3-4-5 2F</p>
-        </div>
-    </div>
-    
-    <div class="card food-card">
-        <div class="food-header">
-            <span class="food-title">Day 4 午餐 (4人)</span>
-            <span class="res-badge res-no">⏳ 需排隊</span>
-        </div>
-        <h3>🍤 天麩羅処ひらお 大名店</h3>
-        <div class="food-info">
-            <p><strong>成員：</strong> 主隊 4人</p>
-            <p><i class="fas fa-info-circle"></i> 平民天婦羅之神，生醃魷魚任食。</p>
-            <p><i class="fas fa-map-marker-alt"></i> 福岡市中央区大名2-6-1</p>
-        </div>
-    </div>
-</section>
+            <div class="card food-card">
+                <div class="food-header">
+                    <span class="food-title">Day 3 晚餐 (4人)</span>
+                    <span class="res-badge res-ok">✅ 必須預約</span>
+                </div>
+                <h3>🍲 博多もつ鍋 前田屋 (中洲店)</h3>
+                <div class="food-info">
+                    <p><strong>成員：</strong> 主隊 4人 (Carol 留守由布院)</p>
+                    <p><i class="fas fa-info-circle"></i> 牛腸鍋，福岡靈魂！</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 福岡市博多区中洲3-4-5 2F</p>
+                </div>
+            </div>
+            
+            <div class="card food-card">
+                <div class="food-header">
+                    <span class="food-title">Day 4 午餐 (4人)</span>
+                    <span class="res-badge res-no">⏳ 需排隊</span>
+                </div>
+                <h3>🍤 天麩羅処ひらお 大名店</h3>
+                <div class="food-info">
+                    <p><strong>成員：</strong> 主隊 4人</p>
+                    <p><i class="fas fa-info-circle"></i> 平民天婦羅之神，生醃魷魚任食。</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 福岡市中央区大名2-6-1</p>
+                </div>
+            </div>
+        </section>
 
         <section id="ski" class="hidden-section">
             <div class="section-title">
@@ -786,10 +788,7 @@
             </tbody>
         </table>
     </div>
-
-
 </section>
-
 
 <section id="bookings" class="hidden-section">
     <div class="section-title">
@@ -801,43 +800,40 @@
         <div class="booking-item">
             <div class="label">1/14 天神東方快捷 (主隊)</div>
             <div class="code">PIN: 9276</div>
-            <small>Ref: ...1999</small>
+            <small>Ref: 1359040369461999</small>
         </div>
         <div class="booking-item">
             <div class="label">1/15 由布院 (主隊 4人)</div>
-            <div class="code">8QAXAK26</div>
+            <div class="code">Ref: 8QAXAK26</div>
             <small>Name: ChanNgaYing Chuchuiyiu</small>
         </div>
         <div class="booking-item" style="border-left: 4px solid #e91e63;">
             <div class="label">1/15 由布院 (Carol 2人)</div>
             <div class="code">PIN: 5760</div>
-            <small>Ref: ...3464 (Detached Room)</small>
+            <small>Conf: 22315093093464 | Order: 1359040368856738</small>
         </div>
         <div class="booking-item" style="border-left: 4px solid #007bff;">
             <div class="label">1/16 Canvas 中洲 (房1)</div>
             <div class="code">PIN: 8686</div>
-            <small>Ref: ...1526</small>
+            <small>Ref: 1359040358501526</small>
         </div>
         <div class="booking-item" style="border-left: 4px solid #007bff;">
             <div class="label">1/16 Canvas 中洲 (房2)</div>
             <div class="code">PIN: 5357</div>
-            <small>Ref: ...1499</small>
+            <small>Conf Ref: 20251119076171651</small>
         </div>
     </div>
 
     <div class="booking-group">
-        <h3>✈️ 機票 PNR</h3>
+        <h3>✈️ 機票 PNR / Order</h3>
         <div class="booking-item">
             <div class="label">Yo姐 (CX)</div>
             <div class="code">FXL72G</div>
         </div>
         <div class="booking-item">
-            <div class="label">YWS (Peach 去)</div>
-            <div class="code">CZ8YU3</div>
-        </div>
-        <div class="booking-item">
-            <div class="label">YWS (Jetstar 返)</div>
-            <div class="code">NNZZ6J</div>
+            <div class="label">YWS (Peach/Jetstar)</div>
+            <div class="code">Order: 6102454699</div>
+            <small>Trip.com 訂單號 (全包)</small>
         </div>
         <div class="booking-item">
             <div class="label">Carol (CX)</div>
@@ -915,8 +911,7 @@
         // === 3. 🚀 核心：偽實時更新邏輯 (V20 New!) ===
         
         // 已替換為你的 Script URL
-        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx8MZlS4D3N0WWkLYtLFWIZymkCU_8EGzZnpDUstpbPxGLRohvu4yC4qVI7f5lxaMGb/exec"; 
-
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx8MZlS4D3N0WWkLYtLFWIZymkCU_8EGzZnpDUstpbPxGLRohvu4yC4qVI7f5lxaMGb/exec";
         let isFetching = false;
         async function fetchRealTimeData() {
             if (isFetching) return;
@@ -959,6 +954,7 @@
 
             totalJpyEl.innerText = sumJpy.toLocaleString();
             totalHkdEl.innerText = sumHkd.toLocaleString();
+            
             // 2. 更新列表 (只顯示最新 5 筆)
             list.innerHTML = '';
             const recent = data.slice(0, 5); // 假設 data 已經係 reverse order
